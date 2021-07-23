@@ -48,4 +48,6 @@ ISSUE #2 : templates clean, darkly et sb-admin and static model in branch templa
 
 ISSUE #3 : Factorization and twigs preparation in branch twig
 
-ISSUE #4 : Authentification : bundle user
+ISSUE #4 : Production in Heroku to see the front-end model on line
+
+ISSUE #5 : Authentification : bundle user (tests and validation before relication in mySupport)
