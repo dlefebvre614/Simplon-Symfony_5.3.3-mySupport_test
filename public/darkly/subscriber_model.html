@@ -1,0 +1,428 @@
+<!-- start of templates/shared/darkly/_header.html.twig -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>Subscriber - mySupport</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="css/bootstrap.css">
+  <link rel="stylesheet" href="css/font-awesome.min.css">
+  <link rel="stylesheet" href="css/prism-okaidia.css">
+  <link rel="stylesheet" href="css/custom.min.css">
+  <!-- Global Site Tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-23019901-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'UA-23019901-1');
+  </script>
+</head>
+
+<body>
+  <!-- end of templates/shared/darkly/_header.html.twig -->
+
+  <!--Start SEO-->
+  <h1 class="text-center">The Subscriber aske help save time.</h1>
+  <h1 hidden>SEO: Technician: Helps the subscriber save time.</h1>
+  <h1 hidden>SEO: Administrator: Helps the customer improve their application.</h1>
+  <!--End SEO-->
+
+  <!-- start of templates/shared/darkly/_navbar.html.twig -->
+
+  <nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-primary">
+    <div class="container-fluid">
+
+      <a class="navbar-brand" href="../clean/index.html">mySupport</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor01"
+        aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarColor01">
+        <ul class="navbar-nav me-auto">
+          <li class="nav-item">
+            <a class="nav-link active" href="../clean/index.html">Home
+              <span class="visually-hidden">(current)</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="../clean/post.html">Features</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="../clean/post.html">Rates</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="../clean/about.html">About</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true"
+              aria-expanded="false">Account</a>
+            <div class="dropdown-menu">
+              <a class="dropdown-item" href="../sb-admin/steps.html">Register</a>
+              <a class="dropdown-item" href="../sb-admin/reset.html">Password</a>
+              <a class="dropdown-item" href="../sb-admin/login.html">Login</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="../clean/index.html">Logout</a>
+            </div>
+          </li>
+          <!-- start only on subscriber model and technicien model -->
+          <li class="nav-item">
+            <a class="nav-link" href="../darkly/helps_subscriber_model.html">List of applications for help</a>
+          </li>
+          <!-- end only on subscriber model and technicien model -->
+        </ul>
+        <form class="d-flex">
+          <input class="form-control me-sm-2" type="text" placeholder="Search">
+          <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
+        </form>
+      </div>
+
+    </div>
+  </nav>
+
+  <!-- end of templates/shared/darkly/_navbar.html.twig -->
+
+  <!-- start of supervision model -->
+  <div class="row">
+    <div class="col-lg-6 col-md-12 col-sm-12">
+      <div class="d-flex mb-4 mx-3 justify-content-center">
+        <div class="card border-success" style="min-width: 10rem;">
+          <div class="card-header"><img width="18%" src="../shortLogo.png"> My supervision </div>
+          <div class="card-body">
+            <h4 class="card-title">All is well!</h4>
+            <p class="card-text">Everything's fine in my infrastructure!</p>
+            <div class="btn-group" role="group" aria-label="Button group with nested dropdown">
+              <button type="button" class="btn btn-danger">Applications</button>
+              <div class="btn-group" role="group">
+                <button id="btnGroupDrop4" type="button" class="btn btn-info dropdown-toggle" data-bs-toggle="dropdown"
+                  aria-haspopup="true" aria-expanded="false"></button>
+                <div class="dropdown-menu" aria-labelledby="btnGroupDrop4">
+                  <a class="btn btn-success" target="Google" href="https://www.google.fr/">Google.fr</a>
+                  <a class="btn btn-warning" target="DLC" href="http://did.lefebvre.conseil.online.fr/">Dlc.fr</a>
+                  <a class="btn btn-success" target="accounting" href="#">My accounting</a>
+                  <a class="btn btn-danger" target="simplon" href="https://simplon.co/">Simplon.co</a>
+                </div>
+              </div>
+            </div>
+
+            <div class="btn-group" role="group" aria-label="Button group with nested dropdown">
+              <button type="button" class="btn btn-primary">Network</button>
+              <div class="btn-group" role="group">
+                <button id="btnGroupDrop1" type="button" class="btn btn-info dropdown-toggle" data-bs-toggle="dropdown"
+                  aria-haspopup="true" aria-expanded="false"></button>
+                <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
+                  <a class="dropdown-item" href="#">My internet</a>
+                  <a class="dropdown-item" href="#">My fiber</a>
+                  <a class="dropdown-item" href="#">My box</a>
+                  <a class="dropdown-item" href="#">My router</a>
+                  <a class="dropdown-item" href="#">My wifi</a>
+                </div>
+              </div>
+            </div>
+
+            <div class="btn-group" role="group" aria-label="Button group with nested dropdown">
+              <button type="button" class="btn btn-success">Terminal</button>
+              <div class="btn-group" role="group">
+                <button id="btnGroupDrop2" type="button" class="btn btn-info dropdown-toggle" data-bs-toggle="dropdown"
+                  aria-haspopup="true" aria-expanded="false"></button>
+                <div class="dropdown-menu" aria-labelledby="btnGroupDrop2">
+                  <a class="btn btn-success" href="#">My PC at home</a>
+                  <a class="dropdown-item" href="#">My Tablet</a>
+                  <a class="dropdown-item" href="#">My Mobile</a>
+                  <a class="btn btn-warning" href="#">My PC at office</a>
+                  <a class="btn btn-danger" href="#">The PC of my wife</a>
+                </div>
+              </div>
+            </div>
+
+            <div class="btn-group" role="group" aria-label="Button group with nested dropdown">
+              <button type="button" class="btn btn-success">Tools</button>
+              <div class="btn-group" role="group">
+                <button id="btnGroupDrop3" type="button" class="btn btn-info dropdown-toggle" data-bs-toggle="dropdown"
+                  aria-haspopup="true" aria-expanded="false"></button>
+                <div class="dropdown-menu" aria-labelledby="btnGroupDrop3">
+                  <a class="btn btn-success" href="#">My Internet Explorer</a>
+                  <a class="dropdown-item" href="#">My tool 2</a>
+                  <a class="dropdown-item" href="#">My tool 3</a>
+                  <a class="btn btn-success" href="#">My supervision</a>
+                </div>
+              </div>
+            </div>
+            <hr>
+            <h4 class="card-title">My label at stick close to my eyes!</h4>
+            <p class="card-text">To have direct access to my Single Point Of Contact!</p>
+            <hr>
+            <div class="row">
+              <div class="col-lg-8 col-md-12 col-sm-12">
+                <div class="card text-white bg-success mb-3" style="max-width: 23rem;">
+                  <div class="card-header">Single Point Of Contact: mySupport</div>
+                  <div class="card-body">
+                    <p class="card-title">Phone number: 1234567890</p>
+                    <button type="button" class="btn btn-dark"><a
+                        href="mailto:spoc@mysupport.pcu">spoc@mysupport.pcu</a></button>
+                    <!--<button type="button" class="btn btn-dark"><a href="mailto:spoc@mysupport.io">print</a></button>-->
+                    <input type="button" class="btn btn-dark" value="Print" onclick="window.print()">
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-4 col-md-12 col-sm-12">
+                <div class="d-flex justify-content-center">
+                  <img src="assets/qrcode_localhost.png" width="160">
+                </div>
+              </div>
+            </div>
+            <hr>
+            <h4 class="card-title">Update my contact information</h4>
+            <div class="card-body">
+              <form>
+                <div class="row mb-3">
+                  <div class="col-md-6">
+                    <div class="form-floating mb-3 mb-md-0">
+                      <input readonly="" value="Jacques" class="form-control" id="inputFirstName" type="text"
+                        placeholder="Enter your first name" />
+                      <label value="Jacques" for="inputFirstName">First name</label>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="form-floating">
+                      <input readonly="" value="DURANT" class="form-control" id="inputLastName" type="text"
+                        placeholder="Enter your last name" />
+                      <label for="inputLastName">Last name</label>
+                    </div>
+                  </div>
+                </div>
+                <label for="inputAddress">Post address: number, type, street, name, postal code, city, country
+                  (Complement: staircase, floor, door number, entrance code, location, informations).</label>
+                <div class="form-group">
+                  <!-- wisiwig -->
+                  <textarea class="form-control" id="exampleTextarea" rows="9">75 bis rue de la Marlière, 78310 Maurepas France (C'est la maison au fond à gauche dans l'allée en gravillons)
+                    </textarea>
+                  <label for="exampleTextarea" class="form-label mt-4"></label>
+                </div>
+                <div class="row mb-3">
+                  <div class="col-md-6">
+                    <div class="form-floating mb-3 mb-md-0">
+                      <input value="0777777777" class="form-control" id="inputMobile" type="text"
+                        placeholder="Enter your mobile" />
+                      <label for="inputFirstName">Mobile</label>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="form-floating">
+                      <input value="01234567890" class="form-control" id="inputPhone" type="text"
+                        placeholder="Enter your phone" />
+                      <label for="inputLastName">Phone</label>
+                    </div>
+                  </div>
+                </div>
+                <div class="mt-4 mb-0">
+                  <div class="d-grid"><a class="btn btn-primary btn-block" href="subscriber_model.html">Update my
+                      contact information</a></div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- end of supervision model -->
+
+    <!-- start of form ask help model -->
+    <div class="col-lg-6 col-md-12 col-sm-12">
+      <div class="d-flex mb-4 mx-3 justify-content-center">
+        <!--<div class="card border-success" style="min-width: 40rem; max-width: 40rem;">-->
+        <div class="card border-info" style="min-width: 10rem;">
+          <div class="card-header"><img width="18%" src="../shortLogo.png"> My ask help </div>
+          <div class="card-body">
+            <form action="../darkly/helps_subscriber_model.html">
+              <fieldset>
+                <legend>Hello Mr. DURANT</legend>
+                <div class="form-group">
+                  <label for="exampleInputEmail1" class="form-label mt-4">Change my mail address for login, if I
+                    want</label>
+                  <input value="jacques.durant@example.com" type="email" class="form-control" id="exampleInputEmail1"
+                    aria-describedby="emailHelp" placeholder="Enter email">
+                  <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone
+                    else. Update for login (Empty = no change)</small>
+                </div>
+                <div class="form-group">
+                  <label for="exampleSelect1" class="form-label mt-4">I choose the difficulty concerned</label>
+                  <select class="form-select" id="exampleSelect1">
+                    <option>I have a 404 error on</option>
+                    <option>I have a 401 error on</option>
+                    <option>I have a 500 error on</option>
+                    <option>I have a 500 error on</option>
+                    <option>my app is unavailable</option>
+                    <option>my application is slow</option>
+                    <option>I don't know how to use my app</option>
+                    <option>explained in the text field</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label class="col-form-label mt-4" for="inputDefault">On URL</label>
+                  <input type="text" value="http ..." class="form-control" placeholder="Default input"
+                    id="inputDefault">
+                </div>
+                <div class="form-group">
+                  <label for="exampleSelect1" class="form-label mt-4">I choose the tool concerned</label>
+                  <select class="form-select" id="exampleSelect1">
+                    <option>my internet explorer</option>
+                    <option>my tool 2</option>
+                    <option>my tool 3</option>
+                    <option>my new tool explained in the text field</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label for="exampleSelect1" class="form-label mt-4">I choose the terminal concerned</label>
+                  <select class="form-select" id="exampleSelect1">
+                    <option>my pc at home</option>
+                    <option>my Tablet</option>
+                    <option>my Mobile</option>
+                    <option>my pc at office</option>
+                    <option>my wife's pc</option>
+                    <option>my new terminal explained in the text field</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label for="exampleSelect1" class="form-label mt-4">I choose the application concerned</label>
+                  <select class="form-select" id="exampleSelect1">
+                    <option>Google.fr</option>
+                    <option>my Appli 2</option>
+                    <option>my Appli 3</option>
+                    <option>my Appli 4</option>
+                    <option>my new Application explained in the text field</option>
+                  </select>
+                </div>
+
+                <div class="form-group">
+                  <label for="exampleTextarea" class="form-label mt-4">I explain my problem from what and on what. (text
+                    field)</label>
+                  <textarea class="form-control" id="exampleTextarea" rows="3"></textarea>
+                  <small id="emailHelp" class="form-text text-muted">On which app, on which terminal, on which tool:
+                    what problem ... (stretch field at the bottom right)</small>
+                </div>
+
+                <div class="form-group">
+                  <label for="formFile" class="form-label mt-4">I show you a screenshot</label>
+                  <input class="form-control" type="file" id="formFile">
+                </div>
+                <legend class="mt-4">My subscribe</legend>
+                <div class="form-check form-switch">
+                  <input class="form-check-input" type="checkbox" id="flexSwitchCheckChecked" checked="">
+                  <label class="form-check-label" for="flexSwitchCheckChecked">I am a subscriber</label>
+                  <br><small id="emailHelp" class="form-text text-muted">If I unsubscribe, I no longer submit a support
+                    request (the current month is due)</small>
+                </div>
+              </fieldset>
+              <button type="submit" class="btn right btn-primary">Submit my request</button>
+            </form>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+  <!-- end of form ask help model -->
+
+  <!-- start of Our answers model -->
+  <div class="col-lg-12 col-md-12 col-sm-12">
+    <div class="d-flex mb-4 mx-3 justify-content-center">
+      <div class="card border-info" style="min-width: 10rem;">
+        <div class="card-header"><img width="18%" src="../shortLogo.png"> Our answers</div>
+        <div class="accordion" id="accordionExample">
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="headingOne">
+              <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne"
+                aria-expanded="true" aria-controls="collapseOne">
+                Solution #1
+              </button>
+            </h2>
+            <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
+              data-bs-parent="#accordionExample">
+              <div class="accordion-body">
+                <strong>This is the first item's accordion body.</strong> It is shown by default, until the collapse
+                plugin adds the appropriate classes that we use to style each element. These classes control the
+                overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of
+                this
+                with custom CSS or overriding our default variables. It's also worth noting that just about any HTML
+                can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="headingTwo">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                Solution #2
+              </button>
+            </h2>
+            <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
+              data-bs-parent="#accordionExample">
+              <div class="accordion-body">
+                <strong>This is the second item's accordion body.</strong> It is hidden by default, until the
+                collapse
+                plugin adds the appropriate classes that we use to style each element. These classes control the
+                overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of
+                this
+                with custom CSS or overriding our default variables. It's also worth noting that just about any HTML
+                can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="headingThree">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                Solution #3
+              </button>
+            </h2>
+            <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree"
+              data-bs-parent="#accordionExample">
+              <div class="accordion-body">
+                <strong>This is the third item's accordion body.</strong> It is hidden by default, until the
+                collapse
+                plugin adds the appropriate classes that we use to style each element. These classes control the
+                overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of
+                this
+                with custom CSS or overriding our default variables. It's also worth noting that just about any HTML
+                can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+  <!-- end of Our answers model -->
+
+  <!-- start of footer sb-admin login model model -->
+  <div id="layoutAuthentication_footer">
+    <footer class="py-4 bg-white mt-auto">
+      <div class="container-fluid px-4">
+        <div class="d-flex align-items-center justify-content-between small">
+          <div class="text-muted">Copyright &copy; mySupport 2021</div>
+          <img src="../clean/assets/img/Sponsors.png" width="50%">
+          <div>
+            <a target="Policy" href="https://en.wikipedia.org/wiki/Privacy_policy">Privacy Policy</a>
+            &middot;
+            <a target="Conditions" href="https://en.wikipedia.org/wiki/Contractual_term">Terms &amp; Conditions</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </div>
+  <!-- start of footer login sb-admin model -->
+
+  <!-- start of templates/shared/darkly/_footer.html.twig -->
+  <script src="js/jquery.min.js"></script>
+  <script src="js/bootstrap.bundle.min.js"></script>
+  <script src="js/prism.js" data-manual></script>
+  <script src="js/custom.js"></script>
+</body>
+
+</html>
+<!-- end of templates/shared/darkly/_footer.html.twig -->

@@ -1,0 +1,431 @@
+<!-- start of templates/shared/darkly/_header.html.twig -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>Technician - mySupport</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="css/bootstrap.css">
+  <link rel="stylesheet" href="css/font-awesome.min.css">
+  <link rel="stylesheet" href="css/prism-okaidia.css">
+  <link rel="stylesheet" href="css/custom.min.css">
+  <!-- Global Site Tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-23019901-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'UA-23019901-1');
+  </script>
+</head>
+
+<body>
+  <!-- end of templates/shared/darkly/_header.html.twig -->
+
+  <!--Start SEO-->
+  <h1 hidden>SEO: Subscriber: Askes help save time.</h1>
+  <h1 class="text-center">The technician Helps the Subscriber save time.</h1>
+  <h1 hidden>SEO: Administrator: Helps the customer improve their application.</h1>
+  <h1 hidden>SEO: The customer improves their application.</h1>
+  <!--End SEO-->
+
+  <!-- start of templates/shared/darkly/_navbar.html.twig -->
+  <nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-primary">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="../clean/index.html">mySupport</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor01"
+        aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarColor01">
+        <ul class="navbar-nav me-auto">
+          <li class="nav-item">
+            <a class="nav-link active" href="../clean/index.html">Home
+              <span class="visually-hidden">(current)</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="../clean/post.html">Features</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="../clean/post.html">Rates</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="../clean/about.html">About</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true"
+              aria-expanded="false">Account</a>
+            <div class="dropdown-menu">
+              <a class="dropdown-item" href="../sb-admin/steps.html">Register</a>
+              <a class="dropdown-item" href="../sb-admin/reset.html">Password</a>
+              <a class="dropdown-item" href="../sb-admin/login.html">Login</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="../clean/index.html">Logout</a>
+            </div>
+          </li>
+          <!-- start only on subscriber model and technicien model -->
+          <li class="nav-item">
+            <a class="nav-link" href="../darkly/helps_technician_model.html">List of applications for help</a>
+          </li>
+          <!-- end only on subscriber model and technicien model -->
+        </ul>
+        <form class="d-flex">
+          <input class="form-control me-sm-2" type="text" placeholder="Search">
+          <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
+        </form>
+      </div>
+    </div>
+  </nav>
+  <!-- end of templates/shared/darkly/_navbar.html.twig -->
+
+  <!-- start of supervision model -->
+  <div class="row">
+    <div class="col-lg-6 col-md-12 col-sm-12">
+      <div class="d-flex mb-4 mx-3 justify-content-center">
+        <div class="card border-success" style="min-width: 10rem;">
+          <div class="card-header"><img width="18%" src="../shortLogo.png"> My supervision </div>
+          <div class="card-body">
+            <h4 class="card-title">Its infrastructure</h4>
+            <p class="card-text">Everything's fine in Its infrastructure!</p>
+            <div class="btn-group" role="group" aria-label="Button group with nested dropdown">
+              <button type="button" class="btn btn-danger">Applications</button>
+              <div class="btn-group" role="group">
+                <button id="btnGroupDrop4" type="button" class="btn btn-info dropdown-toggle" data-bs-toggle="dropdown"
+                  aria-haspopup="true" aria-expanded="false"></button>
+                <div class="dropdown-menu" aria-labelledby="btnGroupDrop4">
+                  <a class="btn btn-success" target="Google" href="https://www.google.fr/">Google.fr</a>
+                  <a class="btn btn-warning" target="DLC" href="http://did.lefebvre.conseil.online.fr/">Dlc.fr</a>
+                  <a class="btn btn-success" target="accounting" href="#">My accounting</a>
+                  <a class="btn btn-danger" target="simplon" href="https://simplon.co/">Simplon.co</a>
+                </div>
+              </div>
+            </div>
+
+            <div class="btn-group" role="group" aria-label="Button group with nested dropdown">
+              <button type="button" class="btn btn-primary">Network</button>
+              <div class="btn-group" role="group">
+                <button id="btnGroupDrop1" type="button" class="btn btn-info dropdown-toggle" data-bs-toggle="dropdown"
+                  aria-haspopup="true" aria-expanded="false"></button>
+                <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
+                  <a class="dropdown-item" href="#">His internet</a>
+                  <a class="dropdown-item" href="#">His fiber</a>
+                  <a class="dropdown-item" href="#">His box</a>
+                  <a class="dropdown-item" href="#">His router</a>
+                  <a class="dropdown-item" href="#">His wifi</a>
+                </div>
+              </div>
+            </div>
+
+            <div class="btn-group" role="group" aria-label="Button group with nested dropdown">
+              <button type="button" class="btn btn-danger">Terminal</button>
+              <div class="btn-group" role="group">
+                <button id="btnGroupDrop2" type="button" class="btn btn-info dropdown-toggle" data-bs-toggle="dropdown"
+                  aria-haspopup="true" aria-expanded="false"></button>
+                <div class="dropdown-menu" aria-labelledby="btnGroupDrop2">
+                  <a class="btn btn-success" href="#">His PC at home</a>
+                  <a class="dropdown-item" href="#">His Tablet</a>
+                  <a class="dropdown-item" href="#">His Mobile</a>
+                  <a class="btn btn-warning" href="#">His PC at office</a>
+                  <a class="btn btn-danger" href="#">The PC of her wife</a>
+                </div>
+              </div>
+            </div>
+
+            <div class="btn-group" role="group" aria-label="Button group with nested dropdown">
+              <button type="button" class="btn btn-success">Tools</button>
+              <div class="btn-group" role="group">
+                <button id="btnGroupDrop3" type="button" class="btn btn-info dropdown-toggle" data-bs-toggle="dropdown"
+                  aria-haspopup="true" aria-expanded="false"></button>
+                <div class="dropdown-menu" aria-labelledby="btnGroupDrop3">
+                  <a class="btn btn-success" href="#">His Internet Explorer</a>
+                  <a class="dropdown-item" href="#">His tool 2</a>
+                  <a class="dropdown-item" href="#">His tool 3</a>
+                  <a class="btn btn-success" href="#">His supervision</a>
+                </div>
+              </div>
+            </div>
+            <hr>
+            <!--</div>
+          <div class="card-body">-->
+            <h4 class="card-title">My infrastructure</h4>
+            <p class="card-text">Everything's fine in my infrastructure!</p>
+            <div class="btn-group" role="group" aria-label="Button group with nested dropdown">
+              <button type="button" class="btn btn-danger">Applications</button>
+              <div class="btn-group" role="group">
+                <button id="btnGroupDrop4" type="button" class="btn btn-info dropdown-toggle" data-bs-toggle="dropdown"
+                  aria-haspopup="true" aria-expanded="false"></button>
+                <div class="dropdown-menu" aria-labelledby="btnGroupDrop4">
+                  <a class="btn btn-success" target="Google" href="https://www.google.fr/">Google.fr</a>
+                  <a class="btn btn-success" target="DLC" href="http://did.lefebvre.conseil.online.fr/">Dlc.fr</a>
+                  <a class="dropdown-item" target="accounting" href="#">His accounting</a>
+                  <a class="btn btn-danger" target="simplon" href="https://simplon.com/">Simplon.com</a>
+                </div>
+              </div>
+            </div>
+
+            <div class="btn-group" role="group" aria-label="Button group with nested dropdown">
+              <button type="button" class="btn btn-success">Network</button>
+              <div class="btn-group" role="group">
+                <button id="btnGroupDrop1" type="button" class="btn btn-info dropdown-toggle" data-bs-toggle="dropdown"
+                  aria-haspopup="true" aria-expanded="false"></button>
+                <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
+                  <a class="btn btn-success" href="#">My internet</a>
+                  <a class="dropdown-item" href="#">My fiber</a>
+                  <a class="btn btn-success" href="#">My box</a>
+                  <a class="btn btn-success" href="#">My router</a>
+                  <a class="dropdown-item" href="#">My wifi</a>
+                </div>
+              </div>
+            </div>
+
+            <div class="btn-group" role="group" aria-label="Button group with nested dropdown">
+              <button type="button" class="btn btn-success">Terminal</button>
+              <div class="btn-group" role="group">
+                <button id="btnGroupDrop2" type="button" class="btn btn-info dropdown-toggle" data-bs-toggle="dropdown"
+                  aria-haspopup="true" aria-expanded="false"></button>
+                <div class="dropdown-menu" aria-labelledby="btnGroupDrop2">
+                  <a class="btn btn-success" href="#">My PC at home</a>
+                  <a class="dropdown-item" href="#">My Tablet</a>
+                  <a class="dropdown-item" href="#">My Mobile</a>
+                  <a class="btn btn-success" href="#">My PC at office</a>
+                </div>
+              </div>
+            </div>
+
+            <div class="btn-group" role="group" aria-label="Button group with nested dropdown">
+              <button type="button" class="btn btn-success">Tools</button>
+              <div class="btn-group" role="group">
+                <button id="btnGroupDrop3" type="button" class="btn btn-info dropdown-toggle" data-bs-toggle="dropdown"
+                  aria-haspopup="true" aria-expanded="false"></button>
+                <div class="dropdown-menu" aria-labelledby="btnGroupDrop3">
+                  <a class="btn btn-success" href="#">My Internet Explorer</a>
+                  <a class="dropdown-item" href="#">My tool 2</a>
+                  <a class="dropdown-item" href="#">My tool 3</a>
+                  <a class="btn btn-success" href="#">My supervision</a>
+                </div>
+              </div>
+            </div>
+            <hr>
+            <h4 class="card-title">Our Single Point Of Contact</h4>
+            <p class="card-text">To give without moderation!</p>
+            <div class="row">
+              <div class="col-lg-8 col-md-12 col-sm-12">
+                <div class="card text-white bg-success mb-3" style="max-width: 23rem;">
+                  <div class="card-header">Single Point Of Contact: mySupport</div>
+                  <div class="card-body">
+                    <p class="card-title">Phone number: 1234567890</p>
+                    <button type="button" class="btn btn-dark"><a
+                        href="mailto:spoc@mysupport.pcu">spoc@mysupport.pcu</a></button>
+                    <!--<button type="button" class="btn btn-dark"><a href="mailto:spoc@mysupport.io">print</a></button>-->
+                    <input type="button" class="btn btn-dark" value="Print" onclick="window.print()">
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-4 col-md-12 col-sm-12">
+                <div class="d-flex justify-content-center">
+                  <img src="assets/qrcode_localhost.png" width="160">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- end of supervision model -->
+
+    <!-- start of form ask help model -->
+    <div class="col-lg-6 col-md-12 col-sm-12">
+      <div class="d-flex mb-4 mx-3 justify-content-center">
+        <!--<div class="card border-success" style="min-width: 40rem; max-width: 40rem;">-->
+        <div class="card border-info" style="min-width: 10rem;">
+          <div class="card-header"><img width="18%" src="../shortLogo.png"> his application for assistance </div>
+          <div class="card-body">
+            <form action="../darkly/helps_technician_model.html">
+              <fieldset>
+                <legend>Mr. DURANT</legend>
+                <div class="form-check form-switch">
+                  <input class="form-check-input" type="checkbox" id="flexSwitchCheckChecked" checked="">
+                  <label class="form-check-label" for="flexSwitchCheckChecked">he is a subscriber</label>
+                  <br><small id="flexSwitchCheckChecked" class="form-text text-muted">If I stop it, he no longer
+                    will submit a support request (the current month stay due)</small>
+                </div>
+                <div class="form-group row">
+                  <label for="staticEmail" class="col-sm-5 col-form-label text-success">His email</label>
+                  <div class="col-sm-7">
+                    <input type="text" readonly="" class="form-control-plaintext" id="staticEmail"
+                      value="email@example.com">
+                  </div>
+                </div>
+                <div class="form-group row">
+                  <label for="staticEmail" class="col-sm-5 col-form-label text-success">His phone number</label>
+                  <div class="col-sm-7">
+                    <input type="text" readonly="" class="form-control-plaintext" id="staticPhone" value="1234567890">
+                  </div>
+                </div>
+
+                <div class="form-group row">
+                  <label for="staticEmail" class="col-sm-5 col-form-label text-success">Her difficulty</label>
+                  <div class="col-sm-7">
+                    <input type="text" readonly="" class="form-control-plaintext" id="staticDifficulty"
+                      value="explained in the text field">
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label class="col-form-label mt-4 text-success" for="inputDefault">URL concerned</label>
+                  <input type="text" readonly=""
+                    value="https://www.bing.com/search?q=traduction+google&form=ANNTH1&refig=1750db2663d04d14be96b34874111017&sp=2&qs=AS&pq=traduction&sk=AS1&sc=8-10&cvid=1750db2663d04d14be96b34874111017&form=TTSREF&isTTRefreshQuery=1"
+                    class="form-control" placeholder="Default input" id="inputDefault">
+                </div>
+
+                <div class="form-group row">
+                  <label for="staticEmail" class="col-sm-5 col-form-label text-success">His tool</label>
+                  <div class="col-sm-7">
+                    <a class="btn btn-success" href="#">His Internet Explorer</a>
+                  </div>
+                </div>
+
+                <div class="form-group row">
+                  <label for="staticEmail" class="col-sm-5 col-form-label text-success">His terminal</label>
+                  <div class="col-sm-7">
+                    <a class="btn btn-success" href="#">His PC at home</a>
+                  </div>
+                </div>
+
+                <div class="form-group row">
+                  <label for="staticEmail" class="col-sm-5 col-form-label text-success">Application</label>
+                  <div class="col-sm-7">
+                    <a class="btn btn-danger" target="simplon" href="https://simplon.com/">Simplon.com</a>
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label for="explanationTextarea" class="form-label mt-4 text-success">Her explanation</label>
+                  <textarea id="explanationTextarea" class="form-control" readonly="" value=""
+                    rows="3">On which app 1, on my pc at home, with Internet Explorer: I have error404 on https://www.bing.com/search?q=traduction+google&form=ANNTH1&refig=1750db2663d04d14be96b34874111017&sp=2&qs=AS&pq=traduction&sk=AS1&sc=8-10&cvid=1750db2663d04d14be96b34874111017&form=TTSREF&isTTRefreshQuery=1</textarea>
+                  <small id="explanationTextarea" class="form-text text-muted">On which app, on which terminal, on which
+                    tool: what problem ... (stretch field at the bottom right)</small>
+                </div>
+                <div class="form-group">
+                  <a class="btn btn-success" target="file" href="https://simplon.com/">his file</a>
+                </div>
+                <div class="form-group">
+                  <label for="explanationTextarea" class="form-label mt-4 text-success">My answer</label>
+                  <textarea id="explanationTextarea" class="form-control" value="" rows="3"></textarea>
+                  <small id="explanationTextarea" class="form-text text-muted">Lien vers la base de connaissance ...
+                    (stretch field at the bottom right)</small>
+                </div>
+                <legend class="mt-4">Send my answer</legend>
+                <button type="submit" class="btn right btn-primary">Send</button>
+              </fieldset>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- end of form ask help model -->
+
+  <!-- start of Our answers model -->
+  <div class="col-lg-12 col-md-12 col-sm-12">
+    <div class="d-flex mb-4 mx-3 justify-content-center">
+      <div class="card border-info" style="min-width: 10rem;">
+        <div class="card-header"><img width="18%" src="../shortLogo.png"> Our answers</div>
+        <div class="accordion" id="accordionExample">
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="headingOne">
+              <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne"
+                aria-expanded="true" aria-controls="collapseOne">
+                Solution #1
+              </button>
+            </h2>
+            <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
+              data-bs-parent="#accordionExample">
+              <div class="accordion-body">
+                <strong>This is the first item's accordion body.</strong> It is shown by default, until the collapse
+                plugin adds the appropriate classes that we use to style each element. These classes control the
+                overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of
+                this
+                with custom CSS or overriding our default variables. It's also worth noting that just about any HTML
+                can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="headingTwo">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                Solution #2
+              </button>
+            </h2>
+            <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
+              data-bs-parent="#accordionExample">
+              <div class="accordion-body">
+                <strong>This is the second item's accordion body.</strong> It is hidden by default, until the
+                collapse
+                plugin adds the appropriate classes that we use to style each element. These classes control the
+                overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of
+                this
+                with custom CSS or overriding our default variables. It's also worth noting that just about any HTML
+                can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="headingThree">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                Solution #3
+              </button>
+            </h2>
+            <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree"
+              data-bs-parent="#accordionExample">
+              <div class="accordion-body">
+                <strong>This is the third item's accordion body.</strong> It is hidden by default, until the
+                collapse
+                plugin adds the appropriate classes that we use to style each element. These classes control the
+                overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of
+                this
+                with custom CSS or overriding our default variables. It's also worth noting that just about any HTML
+                can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+  <!-- end of Our answers model -->
+
+  <!-- start of footer sb-admin login model model -->
+  <div id="layoutAuthentication_footer">
+    <footer class="py-4 bg-white mt-auto">
+      <div class="container-fluid px-4">
+        <div class="d-flex align-items-center justify-content-between small">
+          <div class="text-muted">Copyright &copy; mySupport 2021</div>
+          <img src="../clean/assets/img/Sponsors.png" width="50%">
+          <div>
+            <a target="Policy" href="https://en.wikipedia.org/wiki/Privacy_policy">Privacy Policy</a>
+            &middot;
+            <a target="Conditions" href="https://en.wikipedia.org/wiki/Contractual_term">Terms &amp; Conditions</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </div>
+  <!-- start of footer login sb-admin model -->
+
+  <!-- start of templates/shared/darkly/_footer.html.twig -->
+  <script src="js/jquery.min.js"></script>
+  <script src="js/bootstrap.bundle.min.js"></script>
+  <script src="js/prism.js" data-manual></script>
+  <script src="js/custom.js"></script>
+</body>
+
+</html>
+<!-- end of templates/shared/darkly/_footer.html.twig -->
