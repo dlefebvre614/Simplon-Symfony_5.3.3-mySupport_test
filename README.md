@@ -35,7 +35,6 @@ Create acount on gitHub.
 
 I am the only back-end developer of the project. My pushes are done on:
 
-
 https://github.com/dlefebvre614/Simplon-Symfony_5.3.3-mySupport_test.git
 
 [dlefebvre614/Simplon-Symfony_5.3.3-mySupport_test (github.com)](https://github.com/dlefebvre614/Simplon-Symfony_5.3.3-mySupport_test)
@@ -51,3 +50,5 @@ ISSUE #3 : Factorization and twigs preparation in branch twig
 ISSUE #4 : Production in Heroku to see the front-end model on line
 
 ISSUE #5 : Authentification : bundle user (tests and validation before relication in mySupport)
+
+ISSUE #6 : Entity ORM Doctrine in branch entity
