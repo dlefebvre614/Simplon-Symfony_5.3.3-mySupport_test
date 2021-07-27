@@ -51,4 +51,6 @@ ISSUE #4 : Production in Heroku to see the front-end model on line
 
 ISSUE #5 : Authentification : bundle user (tests and validation before relication in mySupport)
 
-ISSUE #6 : Entity ORM Doctrine in branch entity
+ISSUE #6 : Entities Categorypost and Post ORM Doctrine in branch entity
+
+ISSUE #7 : Blog, Controllers, Forms, Template, Twig.
