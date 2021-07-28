@@ -18,8 +18,12 @@ class CategorypostType extends AbstractType
             ->add('name', TextType::class, [
                 "label" => "Category name",
             ])        
-            ->add('slug') // comment after slug management
-            ->add('parentpost')
+            ->add('slug', TextType::class, [
+                "label" => "Category slub",
+            ])   // comment after slug management
+            ->add('parentpost', TextType::class, [
+                "label" => "Category parent",
+            ])  
             ->add('Submit', SubmitType::class)
         ;
     }

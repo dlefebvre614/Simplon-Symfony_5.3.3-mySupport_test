@@ -25,8 +25,10 @@
                             {#<button type="button" onclick="window.location.href='../darkly/subscriber_model.html';"
                             class="btn btn-primary">Print</button>#}
                             <input type="button" class="btn btn-primary" value="Print" onclick="window.print()">
-                            <button type="button" onclick="window.location.href='../darkly/subscriber_model.html';"
-                            class="btn btn-primary">New</button>
+                            {#<button type="button" onclick="window.location.href={{ path('administrator_categorypost_add')}};"
+                            class="btn btn-primary">New</button>#}
+                            <a href="{{ path('administrator_categorypost_add')}}" 
+                            class="btn btn-primary">New</a>
                         </div>
 
                         <div class="card-body">
@@ -61,7 +63,7 @@
                                         <td>{{categorypost.id}}</td>
                                         <td>{{categorypost.name}}</td>
                                         <td>{{categorypost.slug}}</td>
-                                        <td>{{categorypost.parent}}</td>
+                                        <td>{{categorypost.parentpost}}</td>
                                        <td>
                                             {#<button type="button" onclick="window.location.href='../darkly/subscriber_model.html';"
                                                 class="btn btn-primary">Detail</button>#}
@@ -69,8 +71,8 @@
                                                 class="btn btn-primary">Detail</a>
                                             {#<button type="button" onclick="window.location.href='../darkly/technician_model.html';"
                                                 class="btn btn-primary">Update</button>#}
-                                            <a href="{{ path('administrator_categorypost_update', {id: categorypost.id})}}" 
-                                                class="btn btn-primary">Update</a>
+                                            {#<a href="{{ path('administrator_categorypost_update', {id: categorypost.id})}}" 
+                                                class="btn btn-primary">Update</a>#}
                                         </td>
                                     </tr>
                                     {#{ i++ }#}

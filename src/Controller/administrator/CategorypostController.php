@@ -27,10 +27,10 @@ class CategorypostController extends AbstractController
     /**
      * @Route("/categorypost/{id}", name="categorypost_detail", priority=0, requirements={"id"="\d+"})
      */
-    public function administratorcategorypost(): Response
+    public function administratorcategorypost(Categorypost $categorypost): Response
     {
         return $this->render('administrator/categorypost/detail.html.twig', [
-            'controller_name' => 'CategorypostController',
+            'categorypost' => $categorypost,
         ]);
     }
     /**
@@ -45,7 +45,7 @@ class CategorypostController extends AbstractController
             $em = $this->getDoctrine()->getManager();
             $em->persist($categorypost);
             $em->flush();
-            return $this->redirectToRoute('admin_home');
+            return $this->redirectToRoute('administrator_categorypost');
         }
     
         

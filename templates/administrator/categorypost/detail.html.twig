@@ -1,6 +1,6 @@
 {% extends 'sb-admin.html.twig' %}
 
-			{% block title %}Post - Categoryposts - Administrator - mySupport
+			{% block title %}{{categorypost.name}} - Categoryposts - Administrator - mySupport
 			{% endblock %}
                     
                     {% block title_main %}
@@ -9,7 +9,7 @@
                         <li class="breadcrumb-item active">Administrator</li>
                         <li class="breadcrumb-item active">Entity Administration</li>
                         <li class="breadcrumb-item active">Categoryposts</li>
-                        <li class="breadcrumb-item active">Post</li>
+                        <li class="breadcrumb-item active">{{categorypost.name}}</li>
                     </ol>
                     {% endblock %}
 
@@ -23,10 +23,12 @@
                     <div class="card mb-4">
                         <div class="card-header">
                             <i class="fas fa-table me-1"></i>
-                            Entity Categoryposts / Post
+                            Entity Categoryposts / {{categorypost.name}}
                             {#<button type="button" onclick="window.location.href='../darkly/subscriber_model.html';"
                             class="btn btn-primary">Print</button>#}
                             <input type="button" class="btn btn-primary" value="Print" onclick="window.print()">
+                            <a href="{{ path('administrator_categorypost')}}" 
+                            class="btn btn-primary">List</a>
                         </div>
                         <div class="card-body">
                             <table id="datatablesSimple">
@@ -46,22 +48,22 @@
                                     <tr class="table-primary">
                                         <!--<th scope="row">Primary</th>-->
                                         <td>Identity</td>
-                                        <td>1</td>
+                                        <td>{{categorypost.id}}</td>
                                     </tr>
                                     <tr class="table-secondary">
                                         <!--<th scope="row">Primary</th>-->
                                         <td>Name</td>
-                                        <td>Post</td>
+                                        <td>{{categorypost.name}}</td>
                                     </tr>
                                     <tr class="table-primary">
                                         <!--<th scope="row">Primary</th>-->
                                         <td>Slug</td>
-                                        <td>post</td>
+                                        <td>{{categorypost.slug}}</td>
                                     </tr>
                                     <tr class="table-secondary">
                                         <!--<th scope="row">Primary</th>-->
-                                        <td>Parent</td>
-                                        <td></td>
+                                        <td>parentpost</td>
+                                        <td>{{categorypost.parentpost}}</td>
                                     </tr>
                                 </tbody>
                             </table>
