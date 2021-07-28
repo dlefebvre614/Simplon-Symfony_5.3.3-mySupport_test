@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+        {% block meta %}
+		    <meta charset="utf-8"/>
+		    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+		    <meta name="description" content=""/>
+		    <meta name="author" content=""/>
+		{% endblock %}
+
+        {% block meta_comp %}{% endblock %}
+
+		<title>
+			{% block title %}MySupport - Team engagement
+			{% endblock %}
+		</title>
+
+		{% block stylesheets %}
+			{#{{ encore_entry_link_tags('app') }}#}
+		    <link rel="icon" type="image/x-icon" href="{{ asset('clean/assets/favicon.ico') }}"/> <!-- Font Awesome icons (free version)-->
+		{% endblock %}
+
+        {% block stylesheets_comp %}{% endblock %}
+
+        {% block head_js %}
+		    <script src="{{ asset('clean/js/all.js') }}" crossorigin="anonymous"></script>
+        {% endblock %}
+
+        {% block head_js_comp %}{% endblock %}
+
+        {% block head_css %} 
+		    <!-- Google fonts-->
+            <link href="{{ asset('clean/fonts/lora_italic.css') }}" rel="stylesheet" type="text/css"/>
+		    <link href="{{ asset('clean/fonts/open_sans_italic.css') }}" rel="stylesheet" type="text/css"/>
+		    <!-- Core theme CSS (includes Bootstrap)-->
+		    <link href="{{ asset('clean/css/styles.css') }}" rel="stylesheet"/>
+        {% endblock %}
+
+        {% block head_css_comp %}{% endblock %}
+
+	</head>
+
+	<body>
+		{# Run `composer require symfony/webpack-encore-bundle`
+				           and uncomment the following Encore helpers to start using Symfony UX #}
+
+        {# Navbar} #}
+        {% include "shared/clean/_navbar.html.twig" %}
+
+        {% block body %}
+        {% endblock %}
+
+        {% include "shared/clean/_footer.html.twig" %}
+
+        {% block footer_comp %}
+        {% endblock %}
+
+		{% block foot_js %}
+			{#{{ encore_entry_script_tags('app') }}#}
+		{% endblock %}
+	</body>
+</html>

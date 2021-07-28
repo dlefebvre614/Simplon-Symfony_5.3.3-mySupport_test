@@ -1,0 +1,249 @@
+<!-- start of templates/shared/darkly/_header.html.twig -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Backlog - Technician - mySupport</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/prism-okaidia.css">
+    <link rel="stylesheet" href="css/custom.min.css">
+    <!-- Global Site Tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-23019901-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-23019901-1');
+    </script>
+</head>
+
+<body>
+    <!-- end of templates/shared/darkly/_header.html.twig -->
+
+    <!--Start SEO-->
+    <h1 class="text-center">List of applications for help</h1>
+    <h1 hidden>The Subscriber aske help save time.</h1>
+    <h1 hidden>SEO: Technician: Helps the subscriber save time.</h1>
+    <h1 hidden>SEO: Administrator: Helps the customer improve their application.</h1>
+    <!--End SEO-->
+
+    <!-- start of templates/shared/darkly/_navbar.html.twig -->
+    <nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-primary">
+        <div class="container-fluid">
+
+            <a class="navbar-brand" href="../clean/index.html">mySupport</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor01"
+                aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarColor01">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="../clean/index.html">Home
+                            <span class="visually-hidden">(current)</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../clean/post.html">Features</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../clean/post.html">Rates</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../clean/about.html">About</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button"
+                            aria-haspopup="true" aria-expanded="false">Account</a>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="../sb-admin/steps.html">Register</a>
+                            <a class="dropdown-item" href="../sb-admin/reset.html">Password</a>
+                            <a class="dropdown-item" href="../sb-admin/login.html">Login</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="../clean/index.html">Logout</a>
+                        </div>
+                    </li>
+                    <!-- start only on subscriber model and technicien model -->
+                    <!--<li class="nav-item">
+                        <a class="nav-link" href="../darkly/technician_model.html">Assign applications for help</a>
+                    </li>-->
+                    <!-- end only on subscriber model and technicien model -->
+                </ul>
+                <form class="d-flex">
+                    <input class="form-control me-sm-2" type="text" placeholder="Search">
+                    <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
+                </form>
+            </div>
+        </div>
+    </nav>
+    <!-- end of templates/shared/darkly/_navbar.html.twig -->
+
+    <!-- start of List help model -->
+    <div class="col-lg-12 col-md-12 col-sm-12">
+        <div class="d-flex mb-4 mx-3 justify-content-center">
+            <div class="card border-info" style="min-width: 10rem;">
+                <div class="card-header"><img width="8%" src="../shortLogo.png"> List</div>
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+                            <th scope="col">Start date</th>
+                            <th scope="col">End date</th>
+                            <th scope="col">Subscriber</th>
+                            <th scope="col">Technician</th>
+                            <th scope="col">Difficulty</th>
+                            <th scope="col">Tool</th>
+                            <th scope="col">Terminal</th>
+                            <th scope="col">Application</th>
+                            <th scope="col">URL</th>
+                            <th scope="col">Explanation</th>
+                            <th scope="col">Answerd</th>
+                            <th scope="col">Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="table-primary">
+                            <!--<th scope="row">Primary</th>-->
+                            <td>2021-07-19 10:28</td>
+                            <td>2021-07-19 11:43</td>
+                            <td>Jacques DURANT</td>
+                            <td>Marcel PROUST</td>
+                            <td>My application is slow</td>
+                            <td>Internet Explorer</td>
+                            <td>PC-JACQUES</td>
+                            <td>google.fr</td>
+                            <td>https://www.google.fr</td>
+                            <td>L'application est lente</td>
+                            <td>Fermez les applications qui ne servent pas sur votre PC. Il manque de mémoire</td>
+                            <td>
+                                <button type="button" onclick="window.location.href='../darkly/technician_model.html';"
+                                    class="btn btn-primary">Assign</button>
+                                <button type="button" onclick="window.location.href='../darkly/technician_model.html';"
+                                    class="btn btn-primary">Close</button>
+                            </td>
+                        </tr>
+                        <tr class="table-success">
+                            <!--<th scope="row">Success</th>-->
+                            <td>2021-07-19 10:28</td>
+                            <td>2021-07-19 11:43</td>
+                            <td>Jacques DURANT</td>
+                            <td>Marcel PROUST</td>
+                            <td>My application is slow</td>
+                            <td>Internet Explorer</td>
+                            <td>PC-JACQUES</td>
+                            <td>google.fr</td>
+                            <td>https://www.google.fr</td>
+                            <td>L'application est lente</td>
+                            <td>Fermez les applications qui ne servent pas sur votre PC. Il manque de mémoire</td>
+                            <td>
+                                <button type="button" onclick="window.location.href='../darkly/technician_model.html';"
+                                    class="btn btn-success">Assign</button>
+                                <button type="button" onclick="window.location.href='../darkly/technician_model.html';"
+                                    class="btn btn-success">Close</button>
+                            </td>
+                        </tr>
+                        <tr class="table-danger">
+                            <!--<th scope="row">Danger</th>-->
+                            <td>2021-07-19 10:28</td>
+                            <td>2021-07-19 11:43</td>
+                            <td>Jacques DURANT</td>
+                            <td>Marcel PROUST</td>
+                            <td>My application is slow</td>
+                            <td>Internet Explorer</td>
+                            <td>PC-JACQUES</td>
+                            <td>google.fr</td>
+                            <td>https://www.google.fr</td>
+                            <td>L'application est lente</td>
+                            <td>Fermez les applications qui ne servent pas sur votre PC. Il manque de mémoire</td>
+                            <td>
+                                <button type="button" onclick="window.location.href='../darkly/technician_model.html';"
+                                    class="btn btn-danger">Assign</button>
+                                <button type="button" onclick="window.location.href='../darkly/technician_model.html';"
+                                    class="btn btn-danger">Close</button>
+                            </td>
+                        </tr>
+                        <tr class="table-warning">
+                            <!--<th scope="row">Warning</th>-->
+                            <td>2021-07-19 10:28</td>
+                            <td>2021-07-19 11:43</td>
+                            <td>Jacques DURANT</td>
+                            <td>Marcel PROUST</td>
+                            <td>My application is slow</td>
+                            <td>Internet Explorer</td>
+                            <td>PC-JACQUES</td>
+                            <td>google.fr</td>
+                            <td>https://www.google.fr</td>
+                            <td>L'application est lente</td>
+                            <td>Fermez les applications qui ne servent pas sur votre PC. Il manque de mémoire</td>
+                            <td>
+                                <button type="button" onclick="window.location.href='../darkly/technician_model.html';"
+                                    class="btn btn-warning">Assign</button>
+                                <button type="button" onclick="window.location.href='../darkly/technician_model.html';"
+                                    class="btn btn-warning">Close</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div>
+                    <ul class="pagination">
+                        <li class="page-item disabled">
+                            <a class="page-link" href="#">&laquo;</a>
+                        </li>
+                        <li class="page-item active">
+                            <a class="page-link" href="#">1</a>
+                        </li>
+                        <li class="page-item">
+                            <a class="page-link" href="#">2</a>
+                        </li>
+                        <li class="page-item">
+                            <a class="page-link" href="#">3</a>
+                        </li>
+                        <li class="page-item">
+                            <a class="page-link" href="#">4</a>
+                        </li>
+                        <li class="page-item">
+                            <a class="page-link" href="#">5</a>
+                        </li>
+                        <li class="page-item">
+                            <a class="page-link" href="#">&raquo;</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    <!-- end of List help model -->
+
+    <!-- start of footer sb-admin login model model -->
+    <div id="layoutAuthentication_footer">
+        <footer class="py-4 bg-white mt-auto">
+            <div class="container-fluid px-4">
+                <div class="d-flex align-items-center justify-content-between small">
+                    <div class="text-muted">Copyright &copy; mySupport 2021</div>
+                    <img src="../clean/assets/img/sponsors.png" width="50%">
+                    <div>
+                        <a target="Policy" href="https://en.wikipedia.org/wiki/Privacy_policy">Privacy Policy</a>
+                        &middot;
+                        <a target="Conditions" href="https://en.wikipedia.org/wiki/Contractual_term">Terms &amp;
+                            Conditions</a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <!-- start of footer login sb-admin model -->
+
+    <!-- start of templates/shared/darkly/_footer.html.twig -->
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/prism.js" data-manual></script>
+    <script src="js/custom.js"></script>
+</body>
+
+</html>
+<!-- end of templates/shared/darkly/_footer.html.twig -->

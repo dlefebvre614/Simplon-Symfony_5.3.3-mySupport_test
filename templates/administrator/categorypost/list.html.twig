@@ -1,0 +1,19 @@
+{% extends 'sb-admin.html.twig' %}
+
+			{% block title %}Category posts - Administrator - mySupport
+			{% endblock %}
+                    
+                    {% block title_main %}
+                    <h1 class="mt-4">Category Posts</h1>
+                    <ol class="breadcrumb mb-4">
+                        <li class="breadcrumb-item active">Tables administration</li>
+                        <li class="breadcrumb-item active">Category Posts</li>
+                    </ol>
+                    {% endblock %}
+
+                    {% block card_main %}{% endblock %}
+                    {% block chart_main %}{% endblock %}
+                    {% block table_main %}{% include "shared/sb-admin/_table.html.twig" %}{% endblock %}
+
+{% block body %}
+{% endblock %}
