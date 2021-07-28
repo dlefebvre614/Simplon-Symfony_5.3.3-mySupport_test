@@ -55,12 +55,23 @@
         
         <div id="layoutSidenav">
             <div id="layoutSidenav_content">
+            
                 {% block side_nav %}
                     {% include "shared/sb-admin/_sidenav.html.twig" %}
                 {% endblock %}
+
                 {% block main %}
-                    {% include "shared/sb-admin/_main.html.twig" %}
+                    {#{% include "shared/sb-admin/_main.html.twig" %}#}
+                <main>
+                    <div class="container-fluid px-4">
+                        {% block title_main %}{% include "shared/sb-admin/_title_main.html.twig" %}{% endblock %}
+                        {% block card_main %}{% include "shared/sb-admin/_card.html.twig" %}{% endblock %}
+                        {% block chart_main %}{% include "shared/sb-admin/_chart.html.twig" %}{% endblock %}
+                        {% block table_main %}{% include "shared/sb-admin/_table.html.twig" %}{% endblock %}
+                    </div>
+                </main>
                 {% endblock %}
+
                 {% block footer %}
             	    {% include "shared/sb-admin/_footer.html.twig" %}
                 {% endblock %}
