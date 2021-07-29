@@ -60,6 +60,30 @@
                     {% include "shared/sb-admin/_sidenav.html.twig" %}
                 {% endblock %}
 
+				{% for flashError in app.flashes('verify_email_error') %}
+					<main class="mb-4">
+						<div class="container mt-3 px-4 px-lg-5">
+							<div class="row gx-4 gx-lg-5 justify-content-center">
+								<div class="col-md-10 col-lg-8 col-xl-7">
+									<div class="alert alert-danger" role="alert">{{ flashError }}</div>
+								</div>
+							</div>
+						</div>
+					</main>
+				{% endfor %}
+
+				{% for flashSuccess in app.flashes('success') %}
+					<main class="mb-4">
+						<div class="container mt-3 px-4 px-lg-5">
+							<div class="row gx-4 gx-lg-5 justify-content-center">
+								<div class="col-md-10 col-lg-8 col-xl-7">
+									<div class="alert alert-success" role="alert">{{ flashSuccess }}</div>
+								</div>
+							</div>
+						</div>
+					</main>
+				{% endfor %}
+
                 {% block main %}
                     {#{% include "shared/sb-admin/_main.html.twig" %}#}
                 <main>

@@ -25,7 +25,8 @@ class CategorypostController extends AbstractController
         ]);
     }
     /**
-     * @Route("/categorypost/{id}", name="categorypost_detail", priority=0, requirements={"id"="\d+"})
+     * ---@Route("/categorypost/{slug}", name="post_view", methods={"GET"}, priority=0)
+     * @Route("/categorypost/{id}", name="categorypost_detail", methods={"GET"}, priority=0, requirements={"id"="\d+"})
      */
     public function administratorcategorypost(Categorypost $categorypost): Response
     {
@@ -41,15 +42,38 @@ class CategorypostController extends AbstractController
         $categorypost = new Categorypost();
         $form = $this->createForm(CategorypostType::class, $categorypost);
         $form->handleRequest($request);
+
         if ($form->isSubmitted() && $form->isValid()) {
             $em = $this->getDoctrine()->getManager();
             $em->persist($categorypost);
             $em->flush();
+            $this->addFlash('success', 'Your category has been successfully added!');
+            return $this->redirectToRoute('administrator_categorypost');
+        }
+    
+        return $this->render('administrator/categorypost/add.html.twig', [
+            'form' => $form->createView(),
+        ]);
+    }
+
+        /**
+     * @Route("/categorypost/update/{id}", name="categorypost_update", priority=2)
+     */
+    public function administratorcategoryupdate(Categorypost $categorypost, Request $request): Response
+    {
+        //$categorypost = new Categorypost();
+        $form = $this->createForm(CategorypostType::class, $categorypost);
+        $form->handleRequest($request);
+        if ($form->isSubmitted() && $form->isValid()) {
+            $em = $this->getDoctrine()->getManager();
+            $em->persist($categorypost);
+            $em->flush();
+            $this->addFlash('success', 'Your category has been successfully updated!');
             return $this->redirectToRoute('administrator_categorypost');
         }
     
         
-        return $this->render('administrator/categorypost/add.html.twig', [
+        return $this->render('administrator/categorypost/update.html.twig', [
             'form' => $form->createView(),
         ]);
     }

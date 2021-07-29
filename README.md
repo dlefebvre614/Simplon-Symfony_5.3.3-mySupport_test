@@ -53,4 +53,4 @@ ISSUE #5 : Authentification : bundle user (tests and validation before relicatio
 
 ISSUE #6 : Entities Categorypost and Post ORM Doctrine in branch entity
 
-ISSUE #7 : Blog, Controllers, Forms, Template, Twig.
+ISSUE #7 : Blog, Controllers, Forms, Template, Twig in branch blog.

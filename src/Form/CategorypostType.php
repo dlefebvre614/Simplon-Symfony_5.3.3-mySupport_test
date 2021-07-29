@@ -17,14 +17,18 @@ class CategorypostType extends AbstractType
             //->add('name')
             ->add('name', TextType::class, [
                 "label" => "Category name",
-            ])        
-            ->add('slug', TextType::class, [
-                "label" => "Category slub",
-            ])   // comment after slug management
-            ->add('parentpost', TextType::class, [
-                "label" => "Category parent",
-            ])  
-            ->add('Submit', SubmitType::class)
+            ])
+            // ->add('slug', TextType::class, [
+            //     "label" => "Category slub",
+            // ])   // comment after slug management
+            //->add('parentpost', TextType::class, [
+            //    "label" => "Category parent",
+            //    "required" => false,
+            //])  
+            ->add('parentpost') // could not be converted to string ?
+            ->add('Submit', SubmitType::class, [
+                "row_attr" => ["class" => "mt-3"],
+            ])
         ;
     }
 

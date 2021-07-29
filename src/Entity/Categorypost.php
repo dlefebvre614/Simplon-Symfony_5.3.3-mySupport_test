@@ -6,6 +6,7 @@ use App\Repository\CategorypostRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
+use Gedmo\Mapping\Annotation as Gedmo;
 
 /**
  * @ORM\Entity(repositoryClass=CategorypostRepository::class)
@@ -25,6 +26,7 @@ class Categorypost
     private $name;
 
     /**
+     * @gedmo\Slug(fields={"name"})
      * @ORM\Column(type="string", length=120)
      */
     private $slug;
@@ -72,12 +74,12 @@ class Categorypost
         return $this->slug;
     }
 
-    public function setSlug(string $slug): self
-    {
-        $this->slug = $slug;
-
-        return $this;
-    }
+    // public function setSlug(string $slug): self
+    // {
+    //    $this->slug = $slug;
+    //
+    //    return $this;
+    //}
 
     public function getParentpost(): ?self
     {
