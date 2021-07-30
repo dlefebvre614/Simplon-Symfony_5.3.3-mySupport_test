@@ -24,6 +24,7 @@ class CategorypostController extends AbstractController
             'categoriespost' => $categorypostRepository->findAll(),
         ]);
     }
+
     /**
      * ---@Route("/categorypost/{slug}", name="post_view", methods={"GET"}, priority=0)
      * @Route("/categorypost/{id}", name="categorypost_detail", methods={"GET"}, priority=0, requirements={"id"="\d+"})
@@ -56,7 +57,7 @@ class CategorypostController extends AbstractController
         ]);
     }
 
-        /**
+    /**
      * @Route("/categorypost/update/{id}", name="categorypost_update", priority=2)
      */
     public function administratorcategoryupdate(Categorypost $categorypost, Request $request): Response
