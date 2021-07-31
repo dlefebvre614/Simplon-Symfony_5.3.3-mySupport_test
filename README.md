@@ -41,7 +41,7 @@ https://github.com/dlefebvre614/Simplon-Symfony_5.3.3-mySupport_test.git
 
 ISSUE #1 : Installation of Symfony 5.3.3 full from scratch.
 
-symfony new mySupport --version=5.3 --full
+symfony new mySupport_test --version=5.3 --full
 
 ISSUE #2 : templates clean, darkly et sb-admin and static model in branch template
 
