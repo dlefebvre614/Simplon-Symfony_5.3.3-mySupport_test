@@ -1,14 +1,15 @@
 {% extends 'sb-admin.html.twig' %}
 
-			{% block title %}{{categorypost.name}} - Categoryposts - Administrator - mySupport
+			{% block title %}{{categorypost.parentpost}} - {{categorypost.name}} - Categoryposts - Administrator - mySupport
 			{% endblock %}
                     
                     {% block title_main %}
-                    <h1 class="mt-4">Entity Categoryposts / Post</h1>
+                    <h1 class="mt-4">Entity Categoryposts / {{categorypost.parentpost}} / {{categorypost.name}}</h1>
                     <ol class="breadcrumb mb-4">
                         <li class="breadcrumb-item active">Administrator</li>
                         <li class="breadcrumb-item active">Entity Administration</li>
                         <li class="breadcrumb-item active">Categoryposts</li>
+                        <li class="breadcrumb-item active">{{categorypost.parentpost}}</li>
                         <li class="breadcrumb-item active">{{categorypost.name}}</li>
                     </ol>
                     {% endblock %}
@@ -23,7 +24,7 @@
                     <div class="card mb-4">
                         <div class="card-header">
                             <i class="fas fa-table me-1"></i>
-                            Entity Categoryposts / {{categorypost.name}}
+                            Entity Categoryposts / {{categorypost.parentpost}} / {{categorypost.name}}
                             {#<button type="button" onclick="window.location.href='../darkly/subscriber_model.html';"
                             class="btn btn-primary">Print</button>#}
                             <input type="button" class="btn btn-primary" value="Print" onclick="window.print()">
@@ -62,8 +63,8 @@
                                     </tr>
                                     <tr class="table-secondary">
                                         <!--<th scope="row">Primary</th>-->
-                                        <td>parentpost</td>
-                                        <td>{{categorypost.parentpost}}</td>
+                                        <td>Parent category</td>
+                                        <td>{{categorypost.parentpost}}</td> {# have a problem to resolve : add method __toString in Entity Categorypost #}
                                     </tr>
                                 </tbody>
                             </table>

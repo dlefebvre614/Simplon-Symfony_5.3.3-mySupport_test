@@ -115,5 +115,39 @@
                 <script src="{{ asset('sb-admin/npm/simple-datatables@latest.js') }}" crossorigin="anonymous"></script>
                 <script src="{{ asset('sb-admin/js/datatables-simple-demo.js') }}"></script>
 		{% endblock %}
+
+                    {% block footer_js_comp %}
+                    <script>
+                        window.onload = () => { // console.log("coucou")
+                            let activate = document.querySelectorAll("[type=checkbox]")
+                            //console.log(activate)
+                            for (let button of activate) { // console.log(button)
+                                button.addEventListener("click", function () {
+                                    // console.log("Clic !")
+                                    // alert("Clic !")
+                                    let xmlhttp = new XMLHttpRequest
+                                    xmlhttp.open("get", /administrator/post/activate/${this.dataset.id})
+                                    xmlhttp.send()
+                                    // . then (data ==> console(data.data))
+                                })
+                            }
+                        }
+                    </script>
+                    <script>
+                        window.onload = () => { 
+                            let highlighting = document.querySelectorAll("[type=checkbox]")
+                            for (let button of highlighting) { 
+                                button.addEventListener("click", function () {
+                                    // alert("Clic !")
+                                    let xmlhttp = new XMLHttpRequest
+                                    xmlhttp.open("get", /administrator/post/highlighting/${this.dataset.id})
+                                    xmlhttp.send()
+                                    // . then (data ==> console(data.data))
+                                })
+                            }
+                        }
+                    </script>
+                    {% endblock %}
+
 	</body>
 </html>

@@ -3,7 +3,6 @@
 namespace App\Entity;
 
 use DateTimeImmutable;
-use App\Entity\Categorypost;
 use Doctrine\ORM\Mapping as ORM;
 use App\Repository\PostRepository;
 use Gedmo\Mapping\Annotation as Gedmo;
@@ -13,12 +12,10 @@ use Gedmo\Mapping\Annotation as Gedmo;
  */
 class Post
 {
-    public function __toString()
+    /*public function __toString()
     {
-        return $this->date;
-    }
-
-    //public function __construct(string $datetime = "now", ?DateTimeZone $timezone = null)
+        return $this->name;
+    }*/
     
     /**
      * @ORM\Id
@@ -54,13 +51,13 @@ class Post
     private $urlimage;
 
     /**
-     * ---@Gedmo\Timestampable(on="create")
+     * @Gedmo\Timestampable(on="create")
      * @ORM\Column(type="datetime_immutable")
      */
     private $createdAt;
 
     /**
-     * ---@Gedmo\Timestampable(on="update")
+     * @Gedmo\Timestampable(on="update")
      * @ORM\Column(type="datetime_immutable")
      */
     private $updateAt;

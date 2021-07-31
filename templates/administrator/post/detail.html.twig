@@ -1,0 +1,117 @@
+{% extends 'sb-admin.html.twig' %}
+
+			{% block title %}{{post.title}} - Posts - Administrator - mySupport
+			{% endblock %}
+                    
+                    {% block title_main %}
+                    <h1 class="mt-4">Entity Posts / {{post.title}}</h1>
+                    <ol class="breadcrumb mb-4">
+                        <li class="breadcrumb-item active">Administrator</li>
+                        <li class="breadcrumb-item active">Entity Administration</li>
+                        <li class="breadcrumb-item active">Posts</li>
+                        <li class="breadcrumb-item active">{{post.title}}</li>
+                    </ol>
+                    {% endblock %}
+
+                    {% block card_main %}{% endblock %}
+
+                    {% block chart_main %}{% endblock %}
+
+                    {% block table_main %}
+                    {#{% include "shared/sb-admin/_table.html.twig" %}#}
+
+                    <div class="card mb-4">
+                        <div class="card-header">
+                            <i class="fas fa-table me-1"></i>
+                            Entity Categoryposts / {{post.title}}
+                            <input type="button" class="btn btn-primary" value="Print" onclick="window.print()">
+                            <a href="{{ path('administrator_posts_list')}}" 
+                            class="btn btn-primary">List</a>
+                        </div>
+                        <div class="card-body">
+                            <table id="datatablesSimple">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">Attribut</th>
+                                        <th scope="col">Value</th>
+                                    </tr>
+                                </thead>
+                                <tfoot>
+                                    <tr>
+                                        <th scope="col">Attribut</th>
+                                        <th scope="col">Value</th>
+                                    </tr>
+                                </tfoot>
+                                <tbody>
+                                    <tr class="table-primary">
+                                        <!--<th scope="row">Primary</th>-->
+                                        <td>Identity</td>
+                                        <td>{{post.id}}</td>
+                                    </tr>
+                                    <tr class="table-secondary">
+                                        <!--<th scope="row">Primary</th>-->
+                                        <td>Title</td>
+                                        <td>{{post.title}}</td>
+                                    </tr>
+                                    <tr class="table-primary">
+                                        <!--<th scope="row">Primary</th>-->
+                                        <td>Slug</td>
+                                        <td>{{post.slug}}</td>
+                                    </tr>
+                                    <tr class="table-secondary">
+                                        <!--<th scope="row">Primary</th>-->
+                                        <td>Category</td>
+                                        <td>{{post.categorypost.name}}</td> {# have a problem to resolve ? add method __toString in Entity Post #}
+                                    </tr>
+                                    <tr class="table-primary">
+                                        <!--<th scope="row">Primary</th>-->
+                                        <td>Description</td>
+                                        <td>{{post.description}}</td>
+                                    </tr>
+                                    <tr class="table-secondary">
+                                        <!--<th scope="row">Primary</th>-->
+                                        <td>Content</td>
+                                        <td>{{post.content}}</td>
+                                    </tr>
+                                    <tr class="table-primary">
+                                        <td>URLimage</td>
+                                        <td>{{post.urlimage}}</td>
+                                    </tr>
+                                    <tr class="table-secondary">
+                                        <td>Created At</td>
+                                        <td>{{post.createdat | date}}</td>
+                                    </tr>
+                                    <tr class="table-primary">
+                                        <td>Update At</td>
+                                        <td>{{post.updateat | date}}</td>
+                                    </tr>
+                                    <tr class="table-secondary">
+                                        <td>Spotlighting</td>
+                                        <td>
+                                            // route verify but ajax do not work
+                                            <div class="form-check form-switch">
+                                                <input class="form-check-input" type="checkbox" name="highlighting" id="customSwitch{{ post.id }}" data-id="{{ post.id }}" {{ post.highlighting ? 'checked' : null}}>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr class="table-primary">
+                                        <td>Activate</td>
+                                        <td>
+                                            // route verify but ajax do not work
+                                            <div class="form-check form-switch">
+                                                <input class="form-check-input" type="checkbox" name="active" id="customSwitch{{ post.id }}" data-id="{{ post.id }}" {{ post.active ? 'checked' : null}}>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr class="table-secondary">
+                                        <td>User</td>
+                                        <td>{{post.user}}</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    {% endblock %}
+
+{% block body %}
+{% endblock %}

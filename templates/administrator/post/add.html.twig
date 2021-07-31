@@ -1,0 +1,39 @@
+{% extends 'sb-admin.html.twig' %}
+
+			{% block title %}Add - Post - Administrator - mySupport
+			{% endblock %}
+                    
+                    {% block title_main %}
+                    <h1 class="mt-4">Entity Post / Add</h1>
+                    <ol class="breadcrumb mb-4">
+                        <li class="breadcrumb-item active">Administrator</li>
+                        <li class="breadcrumb-item active">Entity Administration</li>
+                        <li class="breadcrumb-item active">Post</li>
+                        <li class="breadcrumb-item active">Add</li>
+                    </ol>
+                    {% endblock %}
+
+                    {% block card_main %}{% endblock %}
+
+                    {% block chart_main %}{% endblock %}
+
+                    {% block table_main %}
+                    {#{% include "shared/sb-admin/_table.html.twig" %}#}
+
+                    <div class="card mb-4">
+                        <div class="card-header">
+                            <i class="fas fa-table me-1"></i>
+                            Entity Post / Add
+                            <input type="button" class="btn btn-primary" value="Print" onclick="window.print()">
+                            <a href="{{ path('administrator_posts_list')}}" 
+                            class="btn btn-primary">List</a>
+                        </div>
+                        <div class="card-body">
+                            <h1>Add Post</h1>
+                            {{ form(form) }}
+                        </div>
+                    </div>
+                    {% endblock %}
+
+{% block body %}
+{% endblock %}

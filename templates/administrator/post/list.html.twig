@@ -1,0 +1,146 @@
+{% extends 'sb-admin.html.twig' %}
+
+			{% block title %}Post - Administrator - mySupport
+			{% endblock %}
+                    
+                    {% block title_main %}
+                    <h1 class="mt-4">Entity Posts</h1>
+                    <ol class="breadcrumb mb-4">
+                        <li class="breadcrumb-item active">Administrator</li>
+                        <li class="breadcrumb-item active">Entity Administration</li>
+                        <li class="breadcrumb-item active">Post</li>
+                    </ol>
+                    {% endblock %}
+
+                    {% block card_main %}{% endblock %}
+
+                    {% block chart_main %}{% endblock %}
+
+                    {% block table_main %}
+                    {#{% include "shared/sb-admin/_table.html.twig" %}#}
+                    <div class="card mb-4">
+                        <div class="card-header">
+                            <i class="fas fa-table me-1"></i>
+                            Entity Post
+                            <input type="button" class="btn btn-primary" value="Print" onclick="window.print()">
+                            <a href="{{ path('administrator_post_add')}}" 
+                            class="btn btn-primary">New</a>
+                        </div>
+
+                        <div class="card-body">
+                            <table id="datatablesSimple">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">Id</th>
+                                        <th scope="col">Title</th>
+                                        <th scope="col">Slug</th>
+                                        <th scope="col">Description</th>
+                                        <th scope="col">Content</th>
+                                        <th scope="col">URL Image</th>
+                                        <th scope="col">Create at</th>
+                                        <th scope="col">Update at</th>
+                                        <th scope="col">Spotlighting</th>
+                                        <th scope="col">Activate</th>
+                                        <th scope="col">User</th>
+                                        <th scope="col">Category</th>
+                                    </tr>
+                                </thead>
+                                <tfoot>
+                                    <tr>
+                                        <th scope="col">Id</th>
+                                        <th scope="col">Title</th>
+                                        <th scope="col">Slug</th>
+                                        <th scope="col">Description</th>
+                                        <th scope="col">Content</th>
+                                        <th scope="col">URL Image</th>
+                                        <th scope="col">Create at</th>
+                                        <th scope="col">Update at</th>
+                                        <th scope="col">Spotlighting</th>
+                                        <th scope="col">Activate</th>
+                                        <th scope="col">User</th>
+                                        <th scope="col">Category</th>
+                                    </tr>
+                                </tfoot>
+                                <tbody>
+                                    {#{ i=0 }#}
+                                    {% for post in posts %}
+                                    {#% if i is pair %#}
+                                    <tr class="table-primary">
+                                    {#% else %#}
+                                    {# <tr class="table-secondary"> #}
+                                    {#% endif %#}
+                                        <!--<th scope="row">Primary</th>-->
+                                        <td>{{post.id}}</td>
+                                        <td>{{post.title}}</td>
+                                        <td>{{post.slug}}</td>
+                                        <td>{{post.description}}</td>
+                                        <td>{{post.content}}</td>
+                                        <td>{{post.urlimage}}</td>
+                                        <td>{{post.createdat | date}}</td>
+                                        <td>{{post.updateat | date}}</td>
+                                        <td>
+                                            // route verify but ajax do not work
+                                            <div class="form-check form-switch">
+                                                <input class="form-check-input" type="checkbox" name="highlighting" id="customSwitch{{ post.id }}" data-id="{{ post.id }}" {{ post.highlighting ? 'checked' : null}}>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            // route verify but ajax do not work
+                                            <div class="form-check form-switch">
+                                                <input class="form-check-input" type="checkbox" name="active" id="customSwitch{{ post.id }}" data-id="{{ post.id }}" {{ post.active ? 'checked' : null}}>
+                                            </div>
+                                        </td>
+                                        <td>{{post.user}}</td>
+                                        <td>{{post.categorypost.name}}</td>
+                                       {#<td>{{categorypost.parentpost}}</td> have a problem to resolve ! #} 
+                                       <td></td>
+                                       <td>
+                                            <a href="{{ path('administrator_post_detail', {id: post.id})}}" 
+                                                class="btn btn-primary">Detail</a>
+                                            <a href="{{ path('administrator_post_update', {id: post.id})}}" 
+                                                class="btn btn-primary">Update</a>
+                                        </td>
+                                    </tr>
+                                    {#{ i++ }#}
+                                    {% endfor %}
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    {% endblock %}
+
+                    {% block footer_js_comp %}
+                    <script>
+                        window.onload = () => { // console.log("coucou")
+                            let activate = document.querySelectorAll("[type=checkbox]")
+                            console.log(activate)
+                            for (let button of activate) { // console.log(button)
+                                button.addEventListener("click", function () {
+                                    // console.log("Clic !")
+                                    // alert("Clic !")
+                                    let xmlhttp = new XMLHttpRequest
+                                    xmlhttp.open("get", /administrator/post/activate/${this.dataset.id})
+                                    xmlhttp.send()
+                                    // . then (data ==> console(data.data))
+                                })
+                            }
+                        }
+                    </script>
+                    <script>
+                        window.onload = () => { 
+                            let highlighting = document.querySelectorAll("[type=checkbox]")
+                            for (let button of highlighting) { 
+                                button.addEventListener("click", function () {
+                                    // alert("Clic !")
+                                    let xmlhttp = new XMLHttpRequest
+                                    xmlhttp.open("get", /administrator/post/highlighting/${this.dataset.id})
+                                    xmlhttp.send()
+                                    // . then (data ==> console(data.data))
+                                })
+                            }
+                        }
+                    </script>
+                    {% endblock %}
+
+{% block body %}
+{% endblock %}

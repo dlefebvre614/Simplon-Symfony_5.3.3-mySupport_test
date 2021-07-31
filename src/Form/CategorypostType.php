@@ -29,16 +29,16 @@ class CategorypostType extends AbstractType
             //    "required" => false,
             //])  
 
-            //->add('parentpost') // could not be converted to string ?
+            ->add('parentpost') // could not be converted to string : add method __toString in Entity Categorypost
 
-            ->add('parentpost', EntityType::class, [
+            /*->add('parentpost', EntityType::class, [
                 'class' => Categorypost::class,
                 'label' => 'Category parent',
                 'multiple' => false,
                 'choice_label' => 'name',
                 'expanded' => true,
                 'by_reference' => false
-            ])
+            ])*/
 
             ->add('Submit', SubmitType::class, [
                 "row_attr" => ["class" => "mt-3"],
