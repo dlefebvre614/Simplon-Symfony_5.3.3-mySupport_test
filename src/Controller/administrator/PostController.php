@@ -69,7 +69,7 @@ class PostController extends AbstractController
             //dd($post);
             //dd($em);
             $em->flush();
-            $this->addFlash('success', 'Your post has been successfully added!');
+            $this->addFlash('success', 'Your post: ' . $post->getTitle() . ' has been successfully added!');
             return $this->redirectToRoute('administrator_posts_list');
         }
     
@@ -92,7 +92,7 @@ class PostController extends AbstractController
             $em = $this->getDoctrine()->getManager();
             $em->persist($post);
             $em->flush();
-            $this->addFlash('success', 'Your post has been successfully updated!');
+            $this->addFlash('success', 'Your post: ' . $post->getTitle() . ' has been successfully updated!');
             return $this->redirectToRoute('administrator_posts_list');
         }
     
@@ -113,7 +113,7 @@ class PostController extends AbstractController
         $em = $this->getDoctrine()->getManager();
         $em->persist($post);
         $em->flush();
-        $this->addFlash('success', 'Your post has been successfully validate/invalidate!');
+        $this->addFlash('success', 'Your post: ' . $post->getTitle() . ' has been successfully validate/invalidate!');
         return new Response("true");
     }
 
@@ -128,7 +128,7 @@ class PostController extends AbstractController
         $em = $this->getDoctrine()->getManager();
         $em->persist($post);
         $em->flush();
-        $this->addFlash('success', 'Your post has been successfully highlighting/lowlighting!');
+        $this->addFlash('success', 'Your post: ' . $post->getTitle() . ' has been successfully highlighting/lowlighting!');
         return new Response("true");
     }
 }

@@ -82,7 +82,7 @@
                                         <td>
                                             // route verify but ajax do not work
                                             <div class="form-check form-switch">
-                                                <input class="form-check-input" type="checkbox" name="highlighting" id="customSwitch{{ post.id }}" data-id="{{ post.id }}" {{ post.highlighting ? 'checked' : null}}>
+                                                <input class="form-check-input" type="checkbox" name="highlighting" id="customSwitch{{ post.id }}" data-id="/administrator/post/highlighting/{{ post.id }}" {{ post.highlighting ? 'checked' : null}}>
                                             </div> {# Bootstrap 5 #}
                                             {#<div class="custom-control custom-switch">
                                                 <input class="custom-check-input" type="checkbox" name="highlighting" id="customSwitch{{ post.id }}" data-id="{{ post.id }}" {{ post.highlighting ? 'checked' : null}}>
@@ -91,7 +91,7 @@
                                         <td>
                                             // route verify but ajax do not work
                                             <div class="form-check form-switch">
-                                                <input class="form-check-input" type="checkbox" name="active" id="customSwitch{{ post.id }}" data-id="{{ post.id }}" {{ post.active ? 'checked' : null}}>
+                                                <input class="form-check-input" type="checkbox" name="active" id="customSwitch{{ post.id }}" data-id="/administrator/post/activate/{{ post.id }}" {{ post.active ? 'checked' : null}}>
                                             </div>
                                         </td>
                                         <td>{{post.user}}</td>
@@ -121,26 +121,14 @@
                             for (let button of activate) { // console.log(button)
                                 button.addEventListener("click", function () {
                                     //console.log("Clic !")
-                                    //alert("Clic !")
+                                    //alert(`${this.dataset.id}`)
                                     let xmlhttp = new XMLHttpRequest
-                                    xmlhttp.open("get", /administrator/post/activate/${this.dataset.id}) // Error in console Front-End: Route is OK on Back-end!!
+                                    xmlhttp.open("get", `${this.dataset.id}`) // Error in console Front-End: Route is OK on Back-end: because ommited `` under dataset.id !!
                                     xmlhttp.send()
                                     // . then (data ==> console(data.data))
                                 })
                             }
                         }
-                        /* window.onload = () => { 
-                            let highlighting = document.querySelectorAll("[type=checkbox]")
-                            for (let button of highlighting) { 
-                                button.addEventListener("click", function () {
-                                    // alert("Clic !")
-                                    let xmlhttp = new XMLHttpRequest
-                                    xmlhttp.open("get", /administrator/post/highlighting/${this.dataset.id})
-                                    xmlhttp.send()
-                                    // . then (data ==> console(data.data))
-                                })
-                            }
-                        } */
                     </script>
                     {% endblock %}
 

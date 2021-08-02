@@ -22,7 +22,7 @@ class CategorypostType extends AbstractType
 
             // ->add('slug', TextType::class, [
             //     "label" => "Category slub",
-            // ])   // comment after slug management
+            // ])   // comment after Stof slug management
 
             //->add('parentpost', TextType::class, [
             //    "label" => "Category parent",
