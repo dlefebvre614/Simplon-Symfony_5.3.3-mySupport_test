@@ -43,6 +43,7 @@
                                         <th scope="col">Activate</th>
                                         <th scope="col">User</th>
                                         <th scope="col">Category</th>
+                                        <th scope="col">Actions</th>
                                     </tr>
                                 </thead>
                                 <tfoot>
@@ -59,6 +60,7 @@
                                         <th scope="col">Activate</th>
                                         <th scope="col">User</th>
                                         <th scope="col">Category</th>
+                                        <th scope="col">Actions</th>
                                     </tr>
                                 </tfoot>
                                 <tbody>
@@ -73,14 +75,14 @@
                                         <td>{{post.id}}</td>
                                         <td>{{post.title}}</td>
                                         <td>{{post.slug}}</td>
-                                        <td>{{post.description}}</td>
-                                        {#<td>{{post.content | u.trancate(150, '...') | raw}}</td> add bundle twig : ? #}
-                                        <td>{{post.content}}</td>
+                                        <td>{{post.description | raw}}</td>
+                                        {#<td>{{post.content | u.trancate(150, '...') | raw}}</td> must add bundle twig : ? #}
+                                        <td>{{post.content | raw}}</td>
                                         <td>{{post.urlimage}}</td>
                                         <td>{{post.createdat | date}}</td>
                                         <td>{{post.updateat | date}}</td>
                                         <td>
-                                            // route verify but ajax do not work
+                                            {#// route verify but ajax do not work#}
                                             <div class="form-check form-switch">
                                                 <input class="form-check-input" type="checkbox" name="highlighting" id="customSwitch{{ post.id }}" data-id="/administrator/post/highlighting/{{ post.id }}" {{ post.highlighting ? 'checked' : null}}>
                                             </div> {# Bootstrap 5 #}
@@ -89,7 +91,7 @@
                                             </div> bootstrap 4 #}
                                         </td>
                                         <td>
-                                            // route verify but ajax do not work
+                                            {#// route verify but ajax do not work#}
                                             <div class="form-check form-switch">
                                                 <input class="form-check-input" type="checkbox" name="active" id="customSwitch{{ post.id }}" data-id="/administrator/post/activate/{{ post.id }}" {{ post.active ? 'checked' : null}}>
                                             </div>
@@ -97,7 +99,7 @@
                                         <td>{{post.user}}</td>
                                         <td>{{post.categorypost.name}}</td>
                                        {#<td>{{categorypost.parentpost}}</td> have a problem to resolve ! #} 
-                                       <td></td>
+                                       {#<td></td>#}
                                        <td>
                                             <a href="{{ path('administrator_post_detail', {id: post.id})}}" 
                                                 class="btn btn-primary">Detail</a>
@@ -113,7 +115,7 @@
                     </div>
                     {% endblock %}
 
-                    {% block footer_js_comp %}
+                    {#{% block footer_js_comp %}
                     <script>
                         window.onload = () => { // console.log("coucou")
                             let activate = document.querySelectorAll("[type=checkbox]")
@@ -130,7 +132,7 @@
                             }
                         }
                     </script>
-                    {% endblock %}
+                    {% endblock %}#}
 
 {% block body %}
 {% endblock %}

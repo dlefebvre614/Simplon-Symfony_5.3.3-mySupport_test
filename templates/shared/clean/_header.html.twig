@@ -1,0 +1,19 @@
+    <header class="masthead" style="background-image: url({% block image %}{{ asset('clean/assets/img/team-engagement.jpg') }}{% endblock %})">
+        <div class="container position-relative px-4 px-lg-5">
+            <div class="row gx-4 gx-lg-5 justify-content-center">
+                <div class="col-md-10 col-lg-8 col-xl-7">
+                    <div class="site-heading">
+                        <h1>{% block mysupport %} Team engagement {% endblock %}</h1>
+                        <span class="subheading">{% block post %} A service to your measure! {% endblock %}</span>
+                        {% block author %}
+                            <span class="meta">
+                                Posted by
+                                <a href="{{ path('home') }}"> mySupport </a>
+                                on August 03, 2021
+                            </span>
+                        {% endblock %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>

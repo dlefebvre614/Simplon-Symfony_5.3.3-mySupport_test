@@ -126,21 +126,7 @@
                                     // console.log("Clic !")
                                     // alert("Clic !")
                                     let xmlhttp = new XMLHttpRequest
-                                    xmlhttp.open("get", /administrator/post/activate/${this.dataset.id})
-                                    xmlhttp.send()
-                                    // . then (data ==> console(data.data))
-                                })
-                            }
-                        }
-                    </script>
-                    <script>
-                        window.onload = () => { 
-                            let highlighting = document.querySelectorAll("[type=checkbox]")
-                            for (let button of highlighting) { 
-                                button.addEventListener("click", function () {
-                                    // alert("Clic !")
-                                    let xmlhttp = new XMLHttpRequest
-                                    xmlhttp.open("get", /administrator/post/highlighting/${this.dataset.id})
+                                    xmlhttp.open("get", `${this.dataset.id}`)
                                     xmlhttp.send()
                                     // . then (data ==> console(data.data))
                                 })

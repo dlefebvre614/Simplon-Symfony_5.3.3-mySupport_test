@@ -1,0 +1,67 @@
+{% extends 'clean.html.twig' %}
+
+                {#{% block head %}
+            	    {% include "shared/clean/_head.html.twig" %}
+                {% endblock %}#}
+
+                {#{% block navbar %}
+            	    {% include "shared/clean/_navbar.html.twig" %}
+                {% endblock %}#}
+
+                {#{% block header %}
+            	    {% include "shared/clean/_header.html.twig" %}
+                {% endblock %}#}
+
+    {% block header %}
+    <header class="masthead" style="background-image: url({% block image %}{{ post.urlimage }}{% endblock %})">
+        <div class="container position-relative px-4 px-lg-5">
+            <div class="row gx-4 gx-lg-5 justify-content-center">
+                <div class="col-md-10 col-lg-8 col-xl-7">
+                    <div class="site-heading">
+                        <h1>{% block mysupport %} {{ post.title }} {% endblock %}</h1>
+                        <span class="subheading">{% block post %} {{ post.description | raw }} {% endblock %}</span>
+                            {% block author %}
+                            <span class="meta">
+                                Posted by
+                                <a href="{{ path('home') }}"> {{ post.user }} </a>
+                                on {{ post.updateat | date }}
+                            </span>
+                            {% endblock %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    {% endblock %}
+
+                {% block title %} MySupport - Team engagement - {{ post.title }} {% endblock %}
+
+                {#{% block image %}
+                    {{ asset('{{ post.urlimage }}') }}
+                {% endblock %}#}
+
+                {#{% block mysupport %} {{ post.title }} {% endblock %}
+                {% block post %} {{ post.description | raw }} {% endblock %}
+
+                            {% block author %}
+                            <span class="meta">
+                                Posted by
+                                <a href="{{ path('home') }}"> {{ post.user.email }} </a>
+                                on {{ post.updateat | date }}
+                            </span>
+                            {% endblock %}#}
+
+
+
+    {% block main %}
+        <!-- Post Content-->
+        <article class="mb-4">
+            <div class="container px-4 px-lg-5">
+                <div class="row gx-4 gx-lg-5 justify-content-center">
+                    <div class="col-md-10 col-lg-8 col-xl-7">
+                        {{ post.content | raw }}
+                    </div>
+                </div>
+            </div>
+        </article>
+    {% endblock %}

@@ -1,42 +1,110 @@
-{% extends 'base.html.twig' %}
+<!DOCTYPE html>
+<html lang="en">
 
-{% block title %}Log in!{% endblock %}
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>Login - mysupport</title>
+    <link href="{{ asset('sb-admin/css/styles.css')}}" rel="stylesheet" />
+    <script src="{{ asset('sb-admin/js/all.min.js')}}"
+        crossorigin="anonymous"></script>
+</head>
 
-{% block body %}
-<form method="post">
-    {% if error %}
-        <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
-    {% endif %}
-
-    {% if app.user %}
-        <div class="mb-3">
-            You are logged in as {{ app.user.username }}, <a href="{{ path('app_logout') }}">Logout</a>
+{#{% block body %}#}
+<body class="bg-primary">
+    {#<div style="background-size: cover; background-image: url('{{ asset('clean/assets/img/login.jpg') }}');">#}
+    <div style="background-size: cover; background-image: url({{ asset('clean/assets/img/login.jpg') }});">
+        <div id="layoutAuthentication">
+            <div id="layoutAuthentication_content">
+                <main>
+                    <div class="container">
+                        <div class="row justify-content-center">
+                            <div class="col-lg-5">
+                                <div class="card shadow-lg border-0 rounded-lg mt-5">
+                                    <div class="card-header">
+                                        <h3 class="text-center font-weight-light my-4">Login</h3>
+                                    </div>
+                                    <div class="card-body">
+                                    {# Add like orign form #}
+                                    {% if error %}
+                                        <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+                                    {% endif %}
+                                    {# Add like orign form #}
+                                    {% if app.user %}
+                                        <div class="mb-3">
+                                            You are logged in as {{ app.user.username }}, <a href="{{ path('app_logout') }}">Logout</a>
+                                        </div>
+                                    {% endif %}
+                                    {% block form %}
+                                        {#<form method="post" action="{{ asset('clean/index.html') }}">#}
+                                        <form method="post">
+                                            <div class="form-floating mb-3">
+                                                {# Add like orign value=last user name, name="email"#}
+                                                <input name="email" value="{{ last_username }}" class="form-control" id="inputEmail" type="email"
+                                                    placeholder="name@example.com" />
+                                                <label for="inputEmail">Email address</label>
+                                            </div>
+                                            <div class="form-floating mb-3">
+                                                {# It is the same at origin, name="password" #}
+                                                <input name="password" class="form-control" id="inputPassword" type="password"
+                                                    placeholder="Password" />
+                                                <label for="inputPassword">Password</label>
+                                            </div>
+                                            <div class="form-check mb-3">
+                                                {# It is newer at origin to remember the password : look at if ok, or perhaps add in entity user and make something in contrller for that or comment #}
+                                                <input class="form-check-input" id="inputRememberPassword"
+                                                    type="checkbox" value="" />
+                                                <label class="form-check-label" for="inputRememberPassword">Remember
+                                                    Password</label>
+                                            </div>
+                                            {# Add like orign form token CSRF #}
+                                            <input type="hidden" name="_csrf_token"
+                                                value="{{ csrf_token('authenticate') }}"
+                                            >
+                                            <div class="d-flex align-items-center justify-content-between mt-4 mb-0">
+                                                <a class="small" href="{{ path('app_forgot_password_request') }}">Forgot Password?</a>
+                                                {# Must change Route to go home #}
+                                                {#<a class="btn btn-primary" href="{{ asset('clean/index.html') }}">Login</a>#}
+                                                    <button class="btn btn-lg btn-primary" type="submit">
+                                                        Sign in
+                                                    </button>
+                                            </div>
+                                        </form>
+                                    {% endblock %}
+                                    </div>
+                                    <div class="card-footer text-center py-3">
+                                        <div class="small"><a href="{{ asset('sb-admin/steps.html') }}">Need an account? Sign up!</a></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </main>
+            </div>
+            <div id="layoutAuthentication_footer">
+                <footer class="py-4 bg-light mt-auto">
+                    <div class="container-fluid px-4">
+                        <div class="d-flex align-items-center justify-content-between small">
+                            <div class="text-muted">Copyright &copy; mySupport 2021</div>
+                            <img src="../clean/assets/img/Sponsors.png"width="50%">
+                            <div>
+                                <a target="Policy" href="https://en.wikipedia.org/wiki/Privacy_policy">Privacy Policy</a>
+                                &middot;
+                                <a target="Conditions" href="https://en.wikipedia.org/wiki/Contractual_term">Terms &amp; Conditions</a>
+                                </div>
+                        </div>
+                    </div>
+                </footer>
+            </div>
         </div>
-    {% endif %}
+    </div>
+    <script src="{{ asset('sb-admin/js/bootstrap.bundle.min.js')}}"
+        crossorigin="anonymous"></script>
+    <script src="{{ asset('sb-admin/js/scripts.js')}}"></script>
+</body>
+{#{% endblock %}#}
 
-    <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
-    <label for="inputEmail">Email</label>
-    <input type="email" value="{{ last_username }}" name="email" id="inputEmail" class="form-control" autocomplete="email" required autofocus>
-    <label for="inputPassword">Password</label>
-    <input type="password" name="password" id="inputPassword" class="form-control" autocomplete="current-password" required>
-    <h6><a href="{{ path('app_forgot_password_request') }}">Forgot Password?</a></h6>
-    <input type="hidden" name="_csrf_token"
-           value="{{ csrf_token('authenticate') }}"
-    >
-
-    {#
-        Uncomment this section and add a remember_me option below your firewall to activate remember me functionality.
-        See https://symfony.com/doc/current/security/remember_me.html
-
-        <div class="checkbox mb-3">
-            <label>
-                <input type="checkbox" name="_remember_me"> Remember me
-            </label>
-        </div>
-    #}
-
-    <button class="btn btn-lg btn-primary" type="submit">
-        Sign in
-    </button>
-</form>
-{% endblock %}
+</html>

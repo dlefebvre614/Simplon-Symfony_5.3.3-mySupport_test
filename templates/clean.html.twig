@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
+	{#<head>
         {% block meta %}
 		    <meta charset="utf-8"/>
 		    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
@@ -16,7 +16,7 @@
 		</title>
 
 		{% block stylesheets %}
-			{#{{ encore_entry_link_tags('app') }}#}
+			{#{{ encore_entry_link_tags('app') }}
 		    <link rel="icon" type="image/x-icon" href="{{ asset('clean/assets/favicon.ico') }}"/> 
 			<!-- Font Awesome icons (free version)-->
 		{% endblock %}
@@ -39,19 +39,58 @@
 
         {% block head_css_comp %}{% endblock %}
 
-	</head>
+	</head>#}
+
+	{#{% include "shared/clean/_head.html.twig" %}#}
+
+	{% block head %}
+        {% include "shared/clean/_head.html.twig" %}
+    {% endblock %}
 
 	<body>
 		{# Run `composer require symfony/webpack-encore-bundle`
 				           and uncomment the following Encore helpers to start using Symfony UX #}
 
         {# Navbar} #}
-        {% include "shared/clean/_navbar.html.twig" %}
+		{% block navbar %}
+        	{% include "shared/clean/_navbar.html.twig" %}
+		{% endblock %}
 
-        {% block body %}
+		{% block header %}
+            {% include "shared/clean/_header.html.twig" %}
         {% endblock %}
 
-        {% include "shared/clean/_footer.html.twig" %}
+        {% block main %}
+			{% include "shared/clean/_main.html.twig" %}
+        {% endblock %}
+
+					{% for flashError in app.flashes('verify_email_error') %}
+					<main class="mb-4">
+						<div class="container mt-3 px-4 px-lg-5">
+							<div class="row gx-4 gx-lg-5 justify-content-center">
+								<div class="col-md-10 col-lg-8 col-xl-7">
+									<div class="alert alert-danger" role="alert">{{ flashError }}</div>
+								</div>
+							</div>
+						</div>
+					</main>
+					{% endfor %}
+
+					{% for flashSuccess in app.flashes('success') %}
+					<main class="mb-4">
+						<div class="container mt-3 px-4 px-lg-5">
+							<div class="row gx-4 gx-lg-5 justify-content-center">
+								<div class="col-md-10 col-lg-8 col-xl-7">
+									<div class="alert alert-success" role="alert">{{ flashSuccess }}</div>
+								</div>
+							</div>
+						</div>
+					</main>
+					{% endfor %}
+
+                {% block footer %}
+            	    {% include "shared/clean/_footer.html.twig" %}
+                {% endblock %}
 
         {% block footer_comp %}
         {% endblock %}
