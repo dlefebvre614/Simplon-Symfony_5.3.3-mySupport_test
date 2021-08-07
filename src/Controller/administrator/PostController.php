@@ -84,11 +84,11 @@ class PostController extends AbstractController
      */
     public function administratorpostupdate(Post $post, Request $request): Response
     {
-        //$categorypost = new Categorypost();
+        //$post = new post();
         $form = $this->createForm(PostType::class, $post);
         $form->handleRequest($request);
         if ($form->isSubmitted() && $form->isValid()) {
-            $post->setUpdateAt(new \DateTimeImmutable());
+            $post->setUpdateAt(new DateTimeImmutable());
             $em = $this->getDoctrine()->getManager();
             $em->persist($post);
             $em->flush();
@@ -96,7 +96,6 @@ class PostController extends AbstractController
             return $this->redirectToRoute('administrator_posts_list');
         }
     
-        
         return $this->render('administrator/post/update.html.twig', [
             'form' => $form->createView(),
         ]);

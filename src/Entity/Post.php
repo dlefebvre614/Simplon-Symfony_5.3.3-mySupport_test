@@ -7,6 +7,7 @@ use App\Entity\Categorypost;
 use Doctrine\ORM\Mapping as ORM;
 use App\Repository\PostRepository;
 use Gedmo\Mapping\Annotation as Gedmo;
+// use .../Contreints as Asset
 
 /**
  * @ORM\Entity(repositoryClass=PostRepository::class)
@@ -35,6 +36,7 @@ class Post
     /**
      * @gedmo\Slug(fields={"title"})
      * @ORM\Column(type="string", length=255)
+     * ---@asset ...
      */
     private $slug;
 

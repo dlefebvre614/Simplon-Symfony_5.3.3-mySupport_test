@@ -108,6 +108,9 @@
                                         </td>
                                     </tr>
                                     {#{ i++ }#}
+                                    <script>
+                                        {% include "shared/js/_toggle_ajax.js" %}
+                                    </script>
                                     {% endfor %}
                                 </tbody>
                             </table>
@@ -115,8 +118,8 @@
                     </div>
                     {% endblock %}
 
-                    {#{% block footer_js_comp %}
-                    <script>
+                    {% block footer_js_comp %}
+                    {#<script>
                         window.onload = () => { // console.log("coucou")
                             let activate = document.querySelectorAll("[type=checkbox]")
                             console.log(activate)
@@ -131,8 +134,8 @@
                                 })
                             }
                         }
-                    </script>
-                    {% endblock %}#}
+                    </script>#}
+                    {% endblock %}
 
 {% block body %}
 {% endblock %}

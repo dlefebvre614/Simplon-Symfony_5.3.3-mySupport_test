@@ -3,11 +3,11 @@ Chart.defaults.global.defaultFontFamily = '-apple-system,system-ui,BlinkMacSyste
 Chart.defaults.global.defaultFontColor = '#292b2c';
 
 // Area Chart Example
-var ctx = document.getElementById("myAreaChartDemo");
+var ctx = document.getElementById("myAreaChart");
 var myLineChart = new Chart(ctx, {
   type: 'line',
   data: {
-    labels: ["Mar 1", "Mar 2", "Mar 3", "Mar 4", "Mar 5", "Mar 6", "Mar 7", "Mar 8", "Mar 9", "Mar 10", "Mar 11", "Mar 12", "Mar 13"],
+    labels: ["{{ day1 }}", "{{ day2 }}", "{{ day3 }}", "{{ day4 }}", "{{ day5 }}", "{{ day6 }}", "{{ day7 }}", "{{ day8 }}", "{{ day9 }}", "{{ day10 }}", "{{ day11 }}", "{{ day12 }}", "{{ day13 }}"],
     datasets: [{
       label: "Sessions",
       lineTension: 0.3,
@@ -20,7 +20,7 @@ var myLineChart = new Chart(ctx, {
       pointHoverBackgroundColor: "rgba(2,117,216,1)",
       pointHitRadius: 50,
       pointBorderWidth: 2,
-      data: [10000, 30162, 26263, 18394, 18287, 28682, 31274, 33259, 25849, 24159, 32651, 31984, 38451],
+      data: [{{ valday1 }}, {{ valday2 }}, {{ valday3 }}, {{ valday4 }}, {{ valday5 }}, {{ valday6 }}, {{ valday7 }}, {{ valday8 }}, {{ valday9 }}, {{ valday10 }}, {{ valday11 }}, {{ valday12 }}, {{ valday13 }}],
     }],
   },
   options: {

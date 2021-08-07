@@ -110,15 +110,17 @@
                 <script src="{{ asset('sb-admin/js/bootstrap.bundle.min.js') }}" crossorigin="anonymous"></script>
                 <script src="{{ asset('sb-admin/js/scripts.js') }}"></script>
                 <script src="{{ asset('sb-admin/js/Chart.min.js') }}" crossorigin="anonymous"></script>
-                <script src="{{ asset('sb-admin/assets/demo/chart-area-demo.js') }}"></script>
-                <script src="{{ asset('sb-admin/assets/demo/chart-bar-demo.js') }}"></script>
+                {#<script src="{{ asset('sb-admin/assets/demo/chart-area-demo.js') }}"></script>
+                <script src="{{ asset('sb-admin/assets/demo/chart-bar-demo.js') }}"></script>#}
                 <script src="{{ asset('sb-admin/npm/simple-datatables@latest.js') }}" crossorigin="anonymous"></script>
-                <script src="{{ asset('sb-admin/js/datatables-simple-demo.js') }}"></script>
+                {#<script src="{{ asset('sb-admin/js/datatables-simple-demo.js') }}"></script>#}
 		{% endblock %}
 
                     {% block footer_js_comp %}
                     <script>
-                        window.onload = () => { // console.log("coucou")
+						{#{% include "shared/sb-admin/dashboard/js/_days_chart.js" %}
+						{% include "shared/sb-admin/dashboard/js/_months_chart.js" %} Only on Dashboard view #}
+                        {#window.onload = () => { // console.log("coucou")
                             let activate = document.querySelectorAll("[type=checkbox]")
                             //console.log(activate)
                             for (let button of activate) { // console.log(button)
@@ -131,7 +133,7 @@
                                     // . then (data ==> console(data.data))
                                 })
                             }
-                        }
+                        }#}
                     </script>
                     {% endblock %}
 

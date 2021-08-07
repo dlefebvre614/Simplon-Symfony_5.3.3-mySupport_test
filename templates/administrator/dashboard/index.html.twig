@@ -14,7 +14,7 @@
                     {#{% block card_main %}{% endblock %}
 
                     {% block chart_main %}{% endblock %}#}
-
+{% block body %}
                     {% block table_main %}
                     {#{% include "shared/sb-admin/_table.html.twig" %}#}
                     <div class="card mb-4">
@@ -49,19 +49,20 @@
                                     </tr>
                                 </tfoot>
                                 <tbody>
-                                  <!--  {#{ i=0 }#}
+                                    {#{ i=0 }#}
                                     {#% for ask in asks %#}
                                     {#% if i is pair %#}
                                     <tr class="table-primary">
                                     {#% else %#}
                                     <tr class="table-secondary">
                                     {#% endif %#}
-                                        <!--<th scope="row">Primary</th>-->
+                                        <th scope="row">Primary</th>
                                         {#<td>{{categorypost.id}}</td>
                                         <td>{{categorypost.name}}</td>
                                         <td>{{categorypost.slug}}</td>
                                         <td>{{categorypost.parent}}</td>#}
                                        <td>
+                                            futur data
                                             {#<button type="button" onclick="window.location.href='../darkly/subscriber_model.html';"
                                                 class="btn btn-primary">Detail</button>#}
                                             {#<a href="{{ path('administrator_categorypost_detail', {id: categorypost.id})}}" 
@@ -73,12 +74,18 @@
                                         </td>
                                     </tr>
                                     {#{ i++ }#}
-                                    {#{% endfor %}#}-->
+                                    {#{% endfor %}#}
                                 </tbody>
                             </table>
                         </div>
                     </div>
                     {% endblock %}
-
-{% block body %}
 {% endblock %}
+                    {% block footer_js_comp %}
+                    <script>
+						{% include "shared/sb-admin/dashboard/js/_days_chart.js" %}
+						{% include "shared/sb-admin/dashboard/js/_months_chart.js" %}
+                    </script>
+                    {% endblock %}
+
+
