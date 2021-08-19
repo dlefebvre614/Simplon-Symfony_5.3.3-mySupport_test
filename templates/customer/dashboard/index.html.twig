@@ -1,12 +1,12 @@
 {% extends 'sb-admin.html.twig' %}
 
-			{% block title %}Dashboard - Administrator - mySupport
+			{% block title %}Dashboard - Customer - mySupport
 			{% endblock %}
                     
                     {% block title_main %}
                     <h1 class="mt-4">Dashboard</h1>
                     <ol class="breadcrumb mb-4">
-                        <li class="breadcrumb-item active">Administrator</li>
+                        <li class="breadcrumb-item active">Customer</li>
                         <li class="breadcrumb-item active">{{ app.user.email }}</li>
                         <li class="breadcrumb-item active">Dashboard</li>
                     </ol>
@@ -19,11 +19,11 @@
 
 		{# Navbar #}
         {% block navbar %}
-		    {% include "shared/sb-admin/_administrator_navbar.html.twig" %}
+		    {% include "shared/sb-admin/_customer_navbar.html.twig" %}
         {% endblock %}
 
                 {% block side_nav %}
-                    {% include "shared/sb-admin/_administrator_sidenav.html.twig" %}
+                    {% include "shared/sb-admin/_customer_sidenav.html.twig" %}
                 {% endblock %}
 
                     {% block table_main %}

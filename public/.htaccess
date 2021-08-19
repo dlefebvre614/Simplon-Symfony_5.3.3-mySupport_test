@@ -1,0 +1,5 @@
+ErrorDocument 400 sb-admin/400.php
+ErrorDocument 401 sb-admin/401.php
+ErrorDocument 403 sb-admin/403.php
+ErrorDocument 404 sb-admin/404.php #Don't re-add this line
+ErrorDocument 500 sb-admin/500.php

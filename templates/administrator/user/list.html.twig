@@ -1,42 +1,34 @@
 {% extends 'sb-admin.html.twig' %}
 
-			{% block title %}Dashboard - Administrator - mySupport
+			{% block title %}Categoryposts - Administrator - mySupport
 			{% endblock %}
                     
                     {% block title_main %}
-                    <h1 class="mt-4">Dashboard</h1>
+                    <h1 class="mt-4">Entity Categoryposts</h1>
                     <ol class="breadcrumb mb-4">
                         <li class="breadcrumb-item active">Administrator</li>
-                        <li class="breadcrumb-item active">{{ app.user.email }}</li>
-                        <li class="breadcrumb-item active">Dashboard</li>
+                        <li class="breadcrumb-item active">Entity Administration</li>
+                        <li class="breadcrumb-item active">Categoryposts</li>
                     </ol>
                     {% endblock %}
 
-                    {#{% block card_main %}{% endblock %}
+                    {% block card_main %}{% endblock %}
 
-                    {% block chart_main %}{% endblock %}#}
-{% block body %}
-
-		{# Navbar #}
-        {% block navbar %}
-		    {% include "shared/sb-admin/_administrator_navbar.html.twig" %}
-        {% endblock %}
-
-                {% block side_nav %}
-                    {% include "shared/sb-admin/_administrator_sidenav.html.twig" %}
-                {% endblock %}
+                    {% block chart_main %}{% endblock %}
 
                     {% block table_main %}
                     {#{% include "shared/sb-admin/_table.html.twig" %}#}
                     <div class="card mb-4">
                         <div class="card-header">
                             <i class="fas fa-table me-1"></i>
-                            Entity Asks
+                            Entity Categoryposts
                             {#<button type="button" onclick="window.location.href='../darkly/subscriber_model.html';"
                             class="btn btn-primary">Print</button>#}
                             <input type="button" class="btn btn-primary" value="Print" onclick="window.print()">
-                            <button type="button" onclick="window.location.href='../darkly/subscriber_model.html';"
-                            class="btn btn-primary">New</button>
+                            {#<button type="button" onclick="window.location.href={{ path('administrator_categorypost_add')}};"
+                            class="btn btn-primary">New</button>#}
+                            <a href="{{ path('administrator_categorypost_add')}}" 
+                            class="btn btn-primary">New</a>
                         </div>
 
                         <div class="card-body">
@@ -61,23 +53,24 @@
                                 </tfoot>
                                 <tbody>
                                     {#{ i=0 }#}
-                                    {#% for ask in asks %#}
+                                    {% for categorypost in categoriespost %}
                                     {#% if i is pair %#}
                                     <tr class="table-primary">
                                     {#% else %#}
-                                    <tr class="table-secondary">
+                                    {# <tr class="table-secondary"> #}
                                     {#% endif %#}
-                                        <th scope="row">Primary</th>
-                                        {#<td>{{categorypost.id}}</td>
+                                        <!--<th scope="row">Primary</th>-->
+                                        <td>{{categorypost.id}}</td>
                                         <td>{{categorypost.name}}</td>
                                         <td>{{categorypost.slug}}</td>
-                                        <td>{{categorypost.parent}}</td>#}
+                                       <td>{{categorypost.parentpost}}</td> {# have a problem to resolve : add method __toString in Entity Categorypost #} 
                                        <td>
-                                            futur data
                                             {#<button type="button" onclick="window.location.href='../darkly/subscriber_model.html';"
                                                 class="btn btn-primary">Detail</button>#}
-                                            {#<a href="{{ path('administrator_categorypost_detail', {id: categorypost.id})}}" 
-                                                class="btn btn-primary">Detail</a>#}
+                                            <a href="{{ path('administrator_categorypost_detail', {id: categorypost.id})}}" 
+                                                class="btn btn-primary">Detail</a>
+                                            <a href="{{ path('administrator_categorypost_update', {id: categorypost.id})}}" 
+                                                class="btn btn-primary">Update</a>
                                             {#<button type="button" onclick="window.location.href='../darkly/technician_model.html';"
                                                 class="btn btn-primary">Update</button>#}
                                             {#<a href="{{ path('administrator_categorypost_update', {id: categorypost.id})}}" 
@@ -85,18 +78,12 @@
                                         </td>
                                     </tr>
                                     {#{ i++ }#}
-                                    {#{% endfor %}#}
+                                    {% endfor %}
                                 </tbody>
                             </table>
                         </div>
                     </div>
                     {% endblock %}
+
+{% block body %}
 {% endblock %}
-                    {% block footer_js_comp %}
-                    <script>
-						{% include "shared/sb-admin/dashboard/js/_days_chart.js" %}
-						{% include "shared/sb-admin/dashboard/js/_months_chart.js" %}
-                    </script>
-                    {% endblock %}
-
-

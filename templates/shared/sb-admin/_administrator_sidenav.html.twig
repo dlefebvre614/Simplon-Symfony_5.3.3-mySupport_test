@@ -1,0 +1,126 @@
+<div id="layoutSidenav_nav">
+	<nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
+		<div class="sb-sidenav-menu">
+			<div class="nav">
+				<div class="sb-sidenav-menu-heading">Core</div>
+				<a class="nav-link" href="{{ path('administrator_dashboard') }}">
+					<div class="sb-nav-link-icon">
+						<i class="fas fa-tachometer-alt"></i>
+					</div>
+					Dashboard
+				</a>
+				{#<div class="sb-sidenav-menu-heading">Interface</div>
+				<a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseLayouts" aria-expanded="false" aria-controls="collapseLayouts">
+					<div class="sb-nav-link-icon">
+						<i class="fas fa-columns"></i>
+					</div>
+					Layouts
+					<div class="sb-sidenav-collapse-arrow">
+						<i class="fas fa-angle-down"></i>
+					</div>
+				</a>
+				<div class="collapse" id="collapseLayouts" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
+					<nav class="sb-sidenav-menu-nested nav">
+						<a class="nav-link" href="{{ asset('sb-admin/layout-static.html') }}">Static Navigation</a>
+						<a class="nav-link" href="{{ asset('sb-admin/layout-sidenav-light.html') }}">Light Sidenav</a>
+					</nav>
+				</div>#}
+				<a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapsePages" aria-expanded="false" aria-controls="collapsePages">
+					<div class="sb-nav-link-icon">
+						<i class="fas fa-book-open"></i>
+					</div>
+					Pages
+					<div class="sb-sidenav-collapse-arrow">
+						<i class="fas fa-angle-down"></i>
+					</div>
+				</a>
+				<div class="collapse" id="collapsePages" aria-labelledby="headingTwo" data-bs-parent="#sidenavAccordion">
+					<nav class="sb-sidenav-menu-nested nav accordion" id="sidenavAccordionPages">
+						<a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#pagesCollapseAuth" aria-expanded="false" aria-controls="pagesCollapseAuth">
+							Authentication
+							<div class="sb-sidenav-collapse-arrow">
+								<i class="fas fa-angle-down"></i>
+							</div>
+						</a>
+						<div class="collapse" id="pagesCollapseAuth" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordionPages">
+							<nav class="sb-sidenav-menu-nested nav">
+								<a class="nav-link" href="{{ path('app_login') }}">Login</a>
+								<a class="nav-link" href="{{ path('app_register') }}">Register</a>
+								<a class="nav-link" href="{{ path('app_forgot_password_request') }}">Forgot Password</a>
+							</nav>
+						</div>
+						<a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#pagesCollapseError" aria-expanded="false" aria-controls="pagesCollapseError">
+							Error
+							<div class="sb-sidenav-collapse-arrow">
+								<i class="fas fa-angle-down"></i>
+							</div>
+						</a>
+						<div class="collapse" id="pagesCollapseError" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordionPages">
+							<nav class="sb-sidenav-menu-nested nav">
+								<a class="nav-link" href="{{ asset('sb-admin/401.html') }}">401 Page</a>
+								<a class="nav-link" href="{{ asset('sb-admin/404.html') }}">404 Page</a>
+								<a class="nav-link" href="{{ asset('sb-admin/500.html') }}">500 Page</a>
+							</nav>
+						</div>
+						<a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#pagesCollapseProject" aria-expanded="false" aria-controls="pagesCollapseError">
+							project SPOC
+							<div class="sb-sidenav-collapse-arrow">
+								<i class="fas fa-angle-down"></i>
+							</div>
+						</a>
+						<div class="collapse" id="pagesCollapseProject" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordionPages">
+							<nav class="sb-sidenav-menu-nested nav">
+								<a target="project SPOC" class="nav-link" href="https://trello.com/b/56nBR4Av/projet-dapoth%C3%A9ose-spoc">Our Trello SPOC</a>
+								<a target="Expression of needs SPOC" class="nav-link" href="https://trello.com/c/fpoysaiy/1-expression-de-besoin">Expression of needs</a>
+								<a target="documentation SPOC" class="nav-link" href="https://trello.com/c/FdnpZUVZ/27-secret-intelligence-service-sis-au-service-de-sa-majest%C3%A9">Our documentary base</a>
+								<a target="pause SPOC" class="nav-link" href="https://trello.com/c/MYyr8J3Y/26-la-pose-simpose">The pause is essential</a>
+								<a target="Maquette SPOC" class="nav-link" href="http://did.lefebvre.conseil.online.fr//Simplon/mysupport_front-end/clean/index.html">Maquette SPOC</a>
+								<a target="Vidéo SPOC" class="nav-link" href="http://did.lefebvre.conseil.online.fr/videos/2021-07-20-17-47-56.mkv">L'histoire de SPOC (Vidéo de 20mn)</a>
+								<a target="UML : UsersCases SPOC" class="nav-link" href="https://trello.com/c/uYkEH5jv/10-sprint-2-uml-cas-dutilisations">UML : UsersCases</a>
+								<a target="UsersStory SPOC" class="nav-link" href="https://trello.com/c/VnUNFZSR/11-sprint-2-users-stories-newvideo">UsersStory</a>
+								<a target="data model SPOC" class="nav-link" href="https://trello.com/c/7UtrJe2x/12-sprint-2-mcd-mld-mpd">MERISE data model</a>
+								<a target="bugs tracker SPOC" class="nav-link" href="https://trello.com/c/qcSBdIIP/34-bugtracker">Bugs tracker</a>
+								<a target="Code SPOC" class="nav-link" href="https://trello.com/c/z0vCaX4n/64-code-sp%C3%A9cifique">Show specific codes</a>
+								<a target="toDoList SPOC" class="nav-link" href="https://trello.com/c/m04zNVFg/65-reste-%C3%A0-faire-liste-en-vrac">To Do List</a>
+							</nav>
+						</div>
+					</nav>
+				</div>
+				<div class="sb-sidenav-menu-heading">Addons</div>
+				<a class="nav-link" href="{{ asset('sb-admin/charts.html') }}">
+					<div class="sb-nav-link-icon">
+						<i class="fas fa-chart-area"></i>
+					</div>
+					Charts
+				</a>
+				<a class="nav-link" href="{{ asset('sb-admin/tables.html') }}">
+					<div class="sb-nav-link-icon">
+						<i class="fas fa-table"></i>
+					</div>
+					Table example
+				</a>
+				<a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#pagesCollapseEntity" aria-expanded="false" aria-controls="pagesCollapseError">
+					<div class="sb-nav-link-icon">
+						<i class="fas fa-table"></i>
+					</div>
+					Entity Administration
+					<div class="sb-sidenav-collapse-arrow">
+						<i class="fas fa-angle-down"></i>
+					</div>
+				</a>
+				<div class="collapse" id="pagesCollapseEntity" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordionPages">
+					<nav class="sb-sidenav-menu-nested nav">
+						<a class="nav-link" href="{{ path('administrator_categorypost') }}">Categoryposts</a>
+						<a class="nav-link" href="{{ path('administrator_posts_list') }}">Posts</a>
+						{#<a class="nav-link" href="{{ path('administrator_identity_list') }}">Identity</a>#}
+						{#<a class="nav-link" href="{{ path('administrator_payment_list') }}">Payment</a>#}
+					</nav>
+				</div>
+			</div>
+		</div>
+		<div class="sb-sidenav-footer">
+			<div class="small">Logged in as:</div>
+			{{ app.user.email }}
+		</div>
+	</nav>
+</div>

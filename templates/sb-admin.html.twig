@@ -51,13 +51,15 @@
 		and uncomment the following Encore helpers to start using Symfony UX #}
 
 		{# Navbar #}
-		{% include "shared/sb-admin/_navbar.html.twig" %}
-        
+		{% block navbar %}
+			{% include "shared/sb-admin/_navbar_org.html.twig" %}
+        {% endblock %}
+
         <div id="layoutSidenav">
             <div id="layoutSidenav_content">
             
                 {% block side_nav %}
-                    {% include "shared/sb-admin/_sidenav.html.twig" %}
+                    {% include "shared/sb-admin/_sidenav_org.html.twig" %}
                 {% endblock %}
 
 				{% for flashError in app.flashes('verify_email_error') %}

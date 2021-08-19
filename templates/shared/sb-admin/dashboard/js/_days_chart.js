@@ -7,9 +7,9 @@ var ctx = document.getElementById("myAreaChart");
 var myLineChart = new Chart(ctx, {
   type: 'line',
   data: {
-    labels: ["{{ day1 }}", "{{ day2 }}", "{{ day3 }}", "{{ day4 }}", "{{ day5 }}", "{{ day6 }}", "{{ day7 }}", "{{ day8 }}", "{{ day9 }}", "{{ day10 }}", "{{ day11 }}", "{{ day12 }}", "{{ day13 }}"],
+    labels: ["{{ day[0][0] }}", "{{ day[0][1] }}", "{{ day[0][2] }}", "{{ day[0][3] }}", "{{ day[0][4] }}", "{{ day[0][5] }}", "{{ day[0][6] }}", "{{ day[0][7] }}", "{{ day[0][8] }}", "{{ day[0][9] }}", "{{ day[0][10] }}", "{{ day[0][11] }}", "{{ day[0][12] }}"],
     datasets: [{
-      label: "Sessions",
+      label: "Aid applications",
       lineTension: 0.3,
       backgroundColor: "rgba(2,117,216,0.2)",
       borderColor: "rgba(2,117,216,1)",
@@ -20,7 +20,7 @@ var myLineChart = new Chart(ctx, {
       pointHoverBackgroundColor: "rgba(2,117,216,1)",
       pointHitRadius: 50,
       pointBorderWidth: 2,
-      data: [{{ valday1 }}, {{ valday2 }}, {{ valday3 }}, {{ valday4 }}, {{ valday5 }}, {{ valday6 }}, {{ valday7 }}, {{ valday8 }}, {{ valday9 }}, {{ valday10 }}, {{ valday11 }}, {{ valday12 }}, {{ valday13 }}],
+      data: [{{ day[1][0] }}, {{ day[1][1] }}, {{ day[1][2] }}, {{ day[1][3] }}, {{ day[1][4] }}, {{ day[1][5] }}, {{ day[1][6] }}, {{ day[1][7] }}, {{ day[1][8] }}, {{ day[1][9] }}, {{ day[1][10] }}, {{ day[1][11] }}, {{ day[1][12] }}],
     }],
   },
   options: {
@@ -39,8 +39,8 @@ var myLineChart = new Chart(ctx, {
       yAxes: [{
         ticks: {
           min: 0,
-          max: 40000,
-          maxTicksLimit: 5
+          max: {{ maxByDay }},
+          maxTicksLimit: 10
         },
         gridLines: {
           color: "rgba(0, 0, 0, .125)",

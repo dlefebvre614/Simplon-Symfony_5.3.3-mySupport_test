@@ -7,12 +7,12 @@ var ctx = document.getElementById("myBarChart");
 var myLineChart = new Chart(ctx, {
   type: 'bar',
   data: {
-    labels: ["{{ month[0][0] }}", "{{ month[0][1] }}", "{{ month[0][2] }}", "{{ month[0][3] }}", "{{ month[0][4] }}", "{{ month[0][5] }}", "{{ month[0][6] }}"],
+    labels: ["{{ month1 }}", "{{ month2 }}", "{{ month3 }}", "{{ month4 }}", "{{ month5 }}", "{{ month6 }}"],
     datasets: [{
-      label: "Aid Applications",
+      label: "Revenue",
       backgroundColor: "rgba(2,117,216,1)",
       borderColor: "rgba(2,117,216,1)",
-      data: [{{ month[1][0] }}, {{ month[1][1] }}, {{ month[1][2] }}, {{ month[1][3] }}, {{ month[1][4] }}, {{ month[1][5] }}, {{ month[1][6] }}],
+      data: [{{ valmonth1 }}, {{ valmonth2 }}, {{ valmonth3 }}, {{ valmonth4 }}, {{ valmonth5 }}, {{ valmonth6 }}],
     }],
   },
   options: {
@@ -31,7 +31,7 @@ var myLineChart = new Chart(ctx, {
       yAxes: [{
         ticks: {
           min: 0,
-          max: {{ maxByMonth }},
+          max: 15000,
           maxTicksLimit: 5
         },
         gridLines: {

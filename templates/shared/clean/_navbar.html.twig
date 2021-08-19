@@ -10,24 +10,40 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav ms-auto py-4 py-lg-0">
-                    <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4"
-                            href="{{ path('administrator_posts_list') }}">Administrator</a></li>
-                    <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4"
-                            href="{{ asset('sb-admin/customer_model.html') }}">Customer</a></li>
-                    <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4"
+                    {% if is_granted('ROLE_ADMIN') %}
+                        <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4"
+                            href="{{ path('administrator_dashboard') }}">Administrator</a></li>
+                    {% endif %}
+                    {% if is_granted('ROLE_CUSTO') %}
+                        <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4"
+                            href="{{ path('customer_dashboard') }}">Customer</a></li>
+                    {% endif %}
+                    {% if is_granted('ROLE_TECHN') %}
+                        <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4"
                             href="{{ asset('darkly/helps_technician_model.html') }}">Technician</a></li>
-                    <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4"
+                    {% endif %}
+                    {% if is_granted('ROLE_SUBSC') %}
+                        <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4"
                             href="{{ asset('darkly/subscriber_model.html') }}">Subscriber</a></li>
+                    {% endif %}
                     {#<li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="{{ asset('clean/index.html') }}">Home</a></li>#}
                     {#<li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="{{ asset('clean/about.html') }}">About</a></li>#}
                     {#<li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="{{ asset('clean/post.html') }}">Sample Post</a></li>#}
-                    <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="{{ asset('clean/contact.html') }}">Contact</a></li>
-                    <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4"
+
+                    {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+                        <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4"
+                            href="{{ path('app_logout') }}">{{ app.user.email }}</a></li>
+                        {#<li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4"
+                            href="{{ path('app_logout') }}">Logout</a></li>#}
+                    {% else %}
+                        <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="{{ asset('clean/contact.html') }}">Contact</a></li>
+                        <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4"
                             href="{{ path('app_register') }}">Register</a></li>
-                    {#<li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4"
+                        {#<li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4"
                             href="{{ asset('sb-admin/password.html') }}">Password</a></li>#}
-                    <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4"
+                        <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4"
                             href="{{ path('app_login') }}">Login</a></li>
+                    {% endif %}
                 </ul>
             </div>
         </div>
